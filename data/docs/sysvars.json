@@ -1,0 +1,208 @@
+{
+  "BKG": {
+    "returns": "number",
+    "doc": "Background flag: non-zero when the task is running as a background (ghost) task, 0 for an interactive session."
+  },
+  "CHN": {
+    "returns": "string",
+    "doc": "Binary string listing the channels currently open (2 bytes per channel number)."
+  },
+  "CTL": {
+    "returns": "number",
+    "doc": "Control value of the key or GUI event that terminated the last INPUT/OBTAIN (e.g. 4 for F4, or a control's ctl_id for a button)."
+  },
+  "DAY": {
+    "returns": "string",
+    "doc": "Current date as a string in the DAY_FORMAT format (default \"MM/DD/YY\"). Can be changed with SETDAY."
+  },
+  "DLM": {
+    "returns": "string",
+    "doc": "Directory delimiter used by the operating system (\"\\\" on Windows, \"/\" on UNIX)."
+  },
+  "DSZ": {
+    "returns": "number",
+    "doc": "Data size: amount of memory (bytes) still available for data/variables."
+  },
+  "EOM": {
+    "returns": "string",
+    "doc": "End-of-message character that terminated the last INPUT (e.g. $0D$ for Enter)."
+  },
+  "ERR": {
+    "returns": "number",
+    "doc": "Number of the last error that occurred (0 if none). Use MSG(ERR) for its text."
+  },
+  "ERS": {
+    "returns": "number",
+    "doc": "Secondary error status for the last error (e.g. the underlying operating-system error code)."
+  },
+  "ESC": {
+    "returns": "string",
+    "doc": "The escape character $1B$."
+  },
+  "FN": {
+    "returns": "number",
+    "doc": "Prefix for user-defined functions (DEF FNname / FNname(...)); & is an alias. Not usable as a variable on its own."
+  },
+  "GFN": {
+    "returns": "number",
+    "doc": "Returns an unused global file (channel) number from the high channel range (e.g. 65000)."
+  },
+  "GID": {
+    "returns": "string",
+    "doc": "Group identifier of the current user/process (binary string)."
+  },
+  "HFN": {
+    "returns": "number",
+    "doc": "Returns the highest unused file (channel) number (e.g. 32767); useful for opening files in utility routines without clashing with application channels."
+  },
+  "HLP": {
+    "returns": "string",
+    "doc": "Current help reference (the help key/topic in effect for INPUT/GUI help)."
+  },
+  "HWD": {
+    "returns": "string",
+    "doc": "Home working directory: the ProvideX home/start-up directory."
+  },
+  "LFA": {
+    "returns": "number",
+    "doc": "Last file accessed: channel number of the last file I/O operation."
+  },
+  "LFO": {
+    "returns": "number",
+    "doc": "Last file opened: channel number used by the most recent OPEN."
+  },
+  "LIP": {
+    "returns": "string",
+    "doc": "Local IP address information (binary string).",
+    "unverified": true
+  },
+  "LPG": {
+    "returns": "string",
+    "doc": "Last program (name of the previously executing program).",
+    "unverified": true
+  },
+  "LWD": {
+    "returns": "string",
+    "doc": "Local working directory: the current working directory (see CWDIR)."
+  },
+  "MDE": {
+    "returns": "string",
+    "doc": "Current mode/environment string (not available in an embedded COM session).",
+    "unverified": true
+  },
+  "MSE": {
+    "returns": "string",
+    "doc": "Mouse/event status: binary string describing the last mouse event and GUI state."
+  },
+  "MSL": {
+    "returns": "number",
+    "doc": "Match string length: length of the text matched by the last MSK() function."
+  },
+  "NAR": {
+    "returns": "number",
+    "doc": "Number of arguments passed to the current CALLed program, function or method."
+  },
+  "NID": {
+    "returns": "string",
+    "doc": "Node identifier: the network/computer name of the workstation."
+  },
+  "OBJ": {
+    "returns": "number",
+    "doc": "Object-related system value (e.g. the number of the current/last object).",
+    "unverified": true
+  },
+  "PFX": {
+    "returns": "string",
+    "doc": "Current file prefix list (search directories set by PREFIX), space separated."
+  },
+  "PGN": {
+    "returns": "string",
+    "doc": "Program name: full path of the currently executing program (\"\" in command mode)."
+  },
+  "PRC": {
+    "returns": "number",
+    "doc": "Current numeric precision (number of decimal places set by PRECISION; default 2)."
+  },
+  "PRM": {
+    "returns": "string",
+    "doc": "List of all system parameters and their current settings, e.g. \"'BY'=0,-'AH',...\" (a leading - means the parameter is off)."
+  },
+  "PSZ": {
+    "returns": "number",
+    "doc": "Program size: memory (bytes) used by the program currently loaded."
+  },
+  "QUO": {
+    "returns": "string",
+    "doc": "The quotation mark character (\")."
+  },
+  "RET": {
+    "returns": "number",
+    "doc": "Return value (status code) from the last operating-system level call (e.g. SYS/INVOKE or DLL call).",
+    "unverified": true
+  },
+  "RND": {
+    "returns": "number",
+    "doc": "A random number between 0 and 1 (see also the RND() function and RANDOMIZE)."
+  },
+  "SEP": {
+    "returns": "string",
+    "doc": "Default field separator character $8A$ used between fields in records."
+  },
+  "SID": {
+    "returns": "string",
+    "doc": "System/OS family identifier (e.g. \"MSDOS\" on Windows)."
+  },
+  "SSN": {
+    "returns": "string",
+    "doc": "Serial number of the ProvideX licence (e.g. \"0962-001-...\"; the first part is the version)."
+  },
+  "SYS": {
+    "returns": "string",
+    "doc": "Operating system name (e.g. \"MS-WINDOWS\")."
+  },
+  "TIM": {
+    "returns": "number",
+    "doc": "Current time of day in hours as a decimal number (e.g. 13.5 = 1:30 pm). Can be set with SETTIME."
+  },
+  "TME": {
+    "returns": "number",
+    "doc": "Current time of day in hours (like TIM).",
+    "unverified": true
+  },
+  "TMS": {
+    "returns": "number",
+    "doc": "Current milliseconds / sub-second part of the system time.",
+    "unverified": true
+  },
+  "TSM": {
+    "returns": "string",
+    "doc": "Time-stamp information string.",
+    "unverified": true
+  },
+  "UID": {
+    "returns": "string",
+    "doc": "User identifier: the operating-system login name of the user."
+  },
+  "UNT": {
+    "returns": "number",
+    "doc": "Returns the lowest unused channel number, for use in OPEN (UNT)."
+  },
+  "WHO": {
+    "returns": "string",
+    "doc": "Identifier of the workstation/terminal (e.g. the computer name)."
+  },
+  "_OBJ": {
+    "returns": "number",
+    "doc": "Inside an object method, the handle of the current object (like \"this\"/\"self\"). Outside a method it is 0."
+  },
+  "%": {
+    "returns": "any",
+    "doc": "Global variables: any variable whose name starts with % (e.g. %COMPANY$, %USER) is global — shared by all programs in the session and not cleared by RUN/BEGIN.",
+    "note": true
+  },
+  "$$": {
+    "returns": "string",
+    "doc": "Null (empty) hex string literal. $hex$ literals give binary strings, e.g. $0D0A$; $$ is the empty string.",
+    "literal": true
+  }
+}

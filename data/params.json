@@ -1,0 +1,323 @@
+{
+ "AH": {
+  "title": "Alt Window hdr",
+  "onOff": true,
+  "doc": "When the 'AH' parameter is On, the system will display the alternate form of window and box heading lines. The alternate heading line consists if the title centered in an Inverse video line. Default Off."
+ },
+ "BF": {
+  "title": "# Keyed IO bfrs",
+  "min": "3",
+  "max": "50",
+  "default": "10",
+  "onOff": false,
+  "doc": "This parameter is used to define the number of common database KEY IO buffers to be maintained by the system. The default is 10."
+ },
+ "BX": {
+  "title": "BBX Compatible",
+  "onOff": true,
+  "doc": "When this parameter is set, ProvideX will enable BBXtm emulation mode."
+ },
+ "BY": {
+  "title": "Base julian year",
+  "min": "0",
+  "max": "4000",
+  "default": "1970",
+  "onOff": false,
+  "doc": "This parameter is used to define the Base Year for the JUL and DTE functions. January 1 of the base year will is day 0 for the JUL function. By default the system sets this to 1970. If a value of Zero is specified, the JUL/DTE function work on the Julian calendar thus day 0 is around 4713 BC."
+ },
+ "CD": {
+  "title": "Current DIR 1st",
+  "onOff": true,
+  "doc": "When this parameter is set, ProvideX will check the current directory before checking the prefixes for a file. Normally the current directory is searched after the prefixes. Default is off."
+ },
+ "CU": {
+  "title": "Currency char.",
+  "min": "0",
+  "max": "255",
+  "default": "36",
+  "onOff": false,
+  "doc": "This parameter allows the user to specify the ASCII value of the character to be output in formatted numeric data for the Currency symbol. By default it is ASC(\"$\")."
+ },
+ "DC": {
+  "title": "Destructive cur",
+  "onOff": true,
+  "doc": "When the 'DC' parameter is on, ProvideX will output spaces when moving the cursor from left to right for a @(nn). When off the cursor will jump over the intervening locations."
+ },
+ "DD": {
+  "title": "Use / for DIR",
+  "onOff": true,
+  "doc": "When this parameter is On, ProvideX will replace the normal MS-DOS reverse slash ('\\') in path names with a normal slash ('/'). Default is Off."
+ },
+ "DP": {
+  "title": "Decimal point",
+  "min": "0",
+  "max": "255",
+  "default": "46",
+  "onOff": false,
+  "doc": "This parameter allows the user to specify the ASCII value of the character to be output in formatted numeric data for the Decimal Point symbol. By default it is ASC(\".\")."
+ },
+ "DT": {
+  "title": "Device timeout",
+  "min": "0",
+  "max": "120",
+  "default": "0",
+  "onOff": false,
+  "doc": "The 'DT' parameter specifies the number of seconds that ProvideX will wait for output to a device before reporting a device error."
+ },
+ "EG": {
+  "title": "End Gen Err29's",
+  "onOff": true,
+  "doc": "When the 'EG' parameter is On, ProvideX will not generate errors when printing invalid mnemonics. If Off, ProvideX generates an error #29. The default is Off."
+ },
+ "FF": {
+  "title": "Fid format",
+  "min": "0",
+  "max": "3",
+  "default": "0",
+  "onOff": false,
+  "doc": "The 'FF' parameter is used to define the format of information to be returned by the FIB() function. There are 4 possible formats : 0 - Default, 1-Thoroughbred emulation, 2-Rexon emulation, 3-BBX emulation."
+ },
+ "FI": {
+  "title": "Ignore mask err",
+  "onOff": true,
+  "doc": "When the 'FI' parameter is On, ProvideX ignores format mask errors and simply converts the data as if no format mask had been given. If Off, ProvideX generates an error #43. The default is Off."
+ },
+ "FL": {
+  "title": "Filenames lower",
+  "onOff": true,
+  "doc": "If the 'FL' parameter is set all file names will be converted to lower case before being passed to the operating system to locate the file. By default this parameter is Off."
+ },
+ "FP": {
+  "title": "Floatingpoint",
+  "onOff": true,
+  "doc": "When this parameter is On, ProvideX will utilize the Floating Point hardware if available. By default, if your computer system has a floating point processor this parameter is set On otherwise it is set Off."
+ },
+ "FS": {
+  "title": "Field Seperator",
+  "min": "0",
+  "max": "255",
+  "default": "138",
+  "onOff": false,
+  "doc": "This parameter allows the user to change the default field separator which is used by ProvideX. The default value is 138 (hex 8A)."
+ },
+ "FU": {
+  "title": "Filenames upper",
+  "onOff": true,
+  "doc": "If the 'FU' parameter is set all file names will be converted to upper case before being passed to the operating system to locate the file. By default this parameter is Off."
+ },
+ "IC": {
+  "title": "Ignore case",
+  "onOff": true,
+  "doc": "When the 'IC' parameter is On, the ProvideX on-line program scan function [ ] will scan without regard to the case of the text. Default is off."
+ },
+ "IZ": {
+  "title": "Ignore SZ param",
+  "onOff": true,
+  "doc": "When the 'IZ' parameter is On, ProvideX will ignore the maximum memory setting defined by either the START directive or 'SZ' parameter."
+ },
+ "LC": {
+  "title": "Lower case Var",
+  "onOff": true,
+  "doc": "When this parameter is On, the LST function and LIST command output variable names in lower case. By default it is Off."
+ },
+ "LD": {
+  "title": "Lower case Dir",
+  "onOff": true,
+  "doc": "When this parameter is On, the LST function and LIST command output directives, system functions, and system variables in lower case. By default it is Off."
+ },
+ "MS": {
+  "title": "Real swap KB",
+  "min": "0",
+  "max": "400",
+  "onOff": false,
+  "doc": "The value specified by nnn is the number of Kilo-bytes of normal system memory (below 640KB boundary) that will be used as program swap space. This is a MS-DOS only parameter."
+ },
+ "NE": {
+  "title": "Error in Sub",
+  "onOff": true,
+  "doc": "When the 'NE' parameter is On, errors occurring in subprograms will be reported in the subprogram. If the parameter is Off, the error will be returned to the caller. The default setting is Off."
+ },
+ "NI": {
+  "title": "Ignore spaces",
+  "onOff": true,
+  "doc": "When this parameter is On, spaces in numeric fields will by ignored. The default is Off."
+ },
+ "NS": {
+  "title": "Don't swap DOS",
+  "onOff": true,
+  "doc": "When this parameter is set ON, ProvideX will not swap itself out of memory when INVOKING a DOS program (by INVOKE, SYS()). By default it is set OFF"
+ },
+ "OF": {
+  "title": "Output Flush",
+  "onOff": true,
+  "doc": "The 'OF' parameter allows for the definition of a maximum transmission size to be sent to an output device before forcing an output flush. Some UNIX systems and drivers can suffer 'Overrun' conditions if this parameter is not set. This is a UNIX only parameter."
+ },
+ "OP": {
+  "title": "ORIGINAL paths",
+  "onOff": true,
+  "doc": "When the 'OP' parameter is On the system will maintain all program and file names in the original format. When Off program names and file paths will be expanded to the full paths. Default is Off."
+ },
+ "OW": {
+  "title": "SAVE Owner ID#",
+  "min": "0",
+  "max": "30000",
+  "default": "0",
+  "onOff": false,
+  "doc": "This parameter allows the programmer to specify an owner application code to all programs saved."
+ },
+ "PC": {
+  "title": "Program cache",
+  "min": "0",
+  "max": "200",
+  "default": "0",
+  "onOff": false,
+  "doc": "The 'PC' parameter defines the number of programs to remain in the program cache. ProvideX will maintain the last 'nnn' programs/subprograms in memory thus reducing the time required to reload them and improving performance."
+ },
+ "PF": {
+  "title": "Use Page frame",
+  "onOff": true,
+  "doc": "When this MS-DOS only parameter is On, ProvideX will attempt to use the EMS page frame for work space. This will increase the available memory by 64KB on those systems that have EMS. By default this is On if EMS is available on the PC otherwise it is set Off."
+ },
+ "PS": {
+  "title": "Max Swap size",
+  "min": "20",
+  "max": "63",
+  "onOff": false,
+  "doc": "The value specified is the maximum program size (in KB) that ProvideX will allow to be loaded. Once this parameter is set, ProvideX will enable its internal program swapping logic to reduce the demands on memory. (MS-DOS only)"
+ },
+ "QS": {
+  "title": "Quick Start",
+  "onOff": true,
+  "doc": "When this parameter is On, ProvideX will not re-initialize during a START command which specifies a program name. Only a simple START issues from the console will cause ProvideX to re-initialize. By default this parameter is Off."
+ },
+ "QT": {
+  "title": "Quiet No-prompt",
+  "onOff": true,
+  "doc": "When the 'QT' parameter in On, ProvideX will not generate and display a prompt in COMMAND mode. The default setting is Off."
+ },
+ "RR": {
+  "title": "RESET on RUN",
+  "onOff": true,
+  "doc": "When the 'RR' parameter is On, ProvideX will issue a RESET command whenever a RUN statement is executed. Default is Off."
+ },
+ "SC": {
+  "title": "Show Cursor",
+  "onOff": true,
+  "doc": "When this parameter On, the cursor remains visable during processing. When off, the cursor is hidden during processing. Under MS-DOS the default is Off, otherwise, On."
+ },
+ "SD": {
+  "title": "Append slashes",
+  "onOff": true,
+  "doc": "When the 'SD' parameter is On, ProvideX will append a trailing '/' to the name of a sub-directory entry returned while reading a directory. By default this parameter is Off."
+ },
+ "SF": {
+  "title": "Short VAR names",
+  "onOff": true,
+  "doc": "When the 'SF' parameter is On, the compiler portion of ProvideX will restrict variable names to single letter or a letter followed by a number. When Off, spaces are required between directives and variable names to avoid confusion within the compiler. The default setting is Off."
+ },
+ "SL": {
+  "title": "# saved cmnds",
+  "min": "4",
+  "max": "100",
+  "onOff": false,
+  "doc": "The value specified is the number of command input lines to preserve internally. This number can range from 4 to 100. By default it is set to 32."
+ },
+ "SP": {
+  "title": "Serial prt mode",
+  "onOff": true,
+  "doc": "When this parameter is On, all PRINT commands will consider the device 'Non-Buffered' and thus overprints will print a new line over the current line resulting in overprinting of characters. When Off, it will simply replace the contents of the print buffer. Default is Off."
+ },
+ "SV": {
+  "title": "Save version",
+  "min": "0",
+  "max": "1",
+  "default": "1",
+  "onOff": false,
+  "doc": "The 'SV' parameter can be used to have ProvideX generate object for use in the older versions of ProvideX. By default it is set to the current program object version level."
+ },
+ "SZ": {
+  "title": "Max memory size",
+  "min": "40",
+  "max": "32767",
+  "default": "0",
+  "onOff": false,
+  "doc": "The 'SZ' parameter is used to define the maximum memory in KB that the session is allowed to use. By default the value of nnn is set to 1024 or the maximum memory available (whichever is less). The parameter can also be changed by a START directive."
+ },
+ "TH": {
+  "title": "Thousands sep",
+  "min": "0",
+  "max": "255",
+  "default": "44",
+  "onOff": false,
+  "doc": "This parameter allows the user to specify the ASCII value of the character to be output in formatted numeric data for the Thousands separator. By default it is ASC(\",\")."
+ },
+ "UM": {
+  "title": "Use UMBs",
+  "onOff": true,
+  "doc": "This MS-DOS only parameter enables ProvideX to use Upper Memory Blocks on those systems that support them. By default this is enable if UMBs exist on the PC."
+ },
+ "VM": {
+  "title": "Direct Video",
+  "onOff": true,
+  "doc": "This parameter, if set to 1, indicates that all screen I/O under DOS is to use direct memory addressing rather than BIOS calls. This is the default setting. This is a MS-DOS only parameter."
+ },
+ "WD": {
+  "title": "Defer writes",
+  "min": "0",
+  "max": "10000",
+  "onOff": false,
+  "doc": "The 'WD' parameter defines the number of allowable file updates that will be performed before ProvideX flushes its internal buffers. By default in a single user environment the parameter 'WD' is to 10000 otherwise it is set to 0."
+ },
+ "WF": {
+  "title": "WINDOWS Flush",
+  "onOff": true,
+  "doc": "When this parameter is ON, Providex will force a screen update after all PRINT statements. The default is OFF."
+ },
+ "WI": {
+  "title": "WINDOWS Ins. Update",
+  "min": "1",
+  "max": "32000",
+  "onOff": false,
+  "doc": "The 'WI' parameter defines the number of ProvideX directives that will be executed before checking the WINDOWS process queue. Too low a value will slow performance, too high will make WINDOWS sluggish. Default is 1000."
+ },
+ "WK": {
+  "title": "Keep windows",
+  "onOff": true,
+  "doc": "When this parameter is On, WINDOWS will not be automatically DROPed when executing a BEGIN (or END at the mainline). The default is Off."
+ },
+ "WL": {
+  "title": "Use write locks",
+  "onOff": true,
+  "doc": "When this parameter is On, only WRITE locks are to be used in ProvideX. When Off Read locks are used for read directives and Write locks for update directives. The default setting is Off."
+ },
+ "WT": {
+  "title": "#Secs for busy",
+  "min": "0",
+  "max": "100",
+  "default": "0",
+  "onOff": false,
+  "doc": "The 'WT' parameter specifies the number of retries that will made internally by ProvideX for busy records/files. The retries will be performed at one second intervals."
+ },
+ "XF": {
+  "title": "Extend file #s",
+  "onOff": true,
+  "doc": "When this parameter is set, ProvideX will accept file numbers up to 65000 instead of only 127."
+ },
+ "XI": {
+  "title": "Extract blocks",
+  "onOff": true,
+  "doc": "When the 'XI' parameter is On, an EXTRACT statement will only restrict access to the record being extracted from other EXTRACTS. When Off, all access to an EXTRACTED record is restricted. By default the parameter is Off."
+ },
+ "XS": {
+  "title": "XMS Swap KB",
+  "min": "0",
+  "max": "16000",
+  "onOff": false,
+  "doc": "The value specified by nnn is the number of kilo-bytes of Extended Memory (XMS) that will be used as program swap space. If it exceeds the available Extended memory in the system, it will be automatically adjusted to the maximum value allowed. This is a MS-DOS only parameter."
+ },
+ "XT": {
+  "title": "Quit at END",
+  "onOff": true,
+  "doc": "When the 'XT' parameter is On, ProvideX will automatically terminate whenever it returns to COMMAND mode. By default the parameter 'XT' is set On if a lead program is specified on the ProvideX command otherwise the parameter it is set Off."
+ }
+}

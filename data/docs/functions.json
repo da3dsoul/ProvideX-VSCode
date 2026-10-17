@@ -1,0 +1,5251 @@
+{
+  "ABS": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the absolute value of a number.",
+    "signatures": [
+      {
+        "label": "ABS(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "ACS": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the arc cosine (in radians) of a number between -1 and 1.",
+    "signatures": [
+      {
+        "label": "ACS(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "AND": {
+    "category": "bitwise",
+    "returns": "any",
+    "doc": "Bitwise AND. With two strings, returns a string whose bytes are the bitwise AND of the corresponding bytes; with two numbers, returns the numeric bitwise AND (e.g. AND(12,10)=8).",
+    "signatures": [
+      {
+        "label": "AND(string1$, string2$)",
+        "params": [
+          {
+            "name": "string1$",
+            "doc": "First string."
+          },
+          {
+            "name": "string2$",
+            "doc": "Second string (same length)."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2,
+        "returns": "string"
+      },
+      {
+        "label": "AND(num1, num2)",
+        "params": [
+          {
+            "name": "num1",
+            "doc": "First integer."
+          },
+          {
+            "name": "num2",
+            "doc": "Second integer."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2,
+        "returns": "number"
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "ARG": {
+    "category": "system",
+    "returns": "string",
+    "doc": "Returns the n-th argument from the command line that started ProvideX; ARG(0) is the executable/program name. Errors if the argument does not exist.",
+    "signatures": [
+      {
+        "label": "ARG(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Argument number (0 = program)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "ASC": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Returns the ASCII (byte) value of the first character of a string. Errors on a null string.",
+    "signatures": [
+      {
+        "label": "ASC(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "ASN": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the arc sine (in radians) of a number between -1 and 1.",
+    "signatures": [
+      {
+        "label": "ASN(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "ATH": {
+    "category": "string",
+    "returns": "string",
+    "doc": "ASCII-to-hex conversion: converts a string of hexadecimal digits into the corresponding binary string (ATH(\"41\")=\"A\"). Inverse of HTA().",
+    "signatures": [
+      {
+        "label": "ATH(hex$)",
+        "params": [
+          {
+            "name": "hex$",
+            "doc": "String of hex digit pairs."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "ATN": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the arc tangent (in radians) of a number.",
+    "signatures": [
+      {
+        "label": "ATN(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "BIN": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Converts an integer to a binary (two's complement, big-endian) string of the given length, e.g. BIN(65,2)=$0041$. See DEC() for the inverse.",
+    "signatures": [
+      {
+        "label": "BIN(value, length)",
+        "params": [
+          {
+            "name": "value",
+            "doc": "Integer to convert."
+          },
+          {
+            "name": "length",
+            "doc": "Length of the resulting string in bytes."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "BSZ": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Returns memory block size information for the session (e.g. BSZ(0)). Exact meaning of the argument not confirmed.",
+    "signatures": [
+      {
+        "label": "BSZ(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Information selector."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "CHG": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Internal/undocumented string function (returns a null string for ordinary text in 9.62).",
+    "signatures": [
+      {
+        "label": "CHG(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "CHR": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Returns the one-character string whose ASCII (byte) value is given, e.g. CHR(65)=\"A\".",
+    "signatures": [
+      {
+        "label": "CHR(code)",
+        "params": [
+          {
+            "name": "code",
+            "doc": "Character code 0-255."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "CMP": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Compresses a string (zlib-style); use UCP() to restore the original.",
+    "signatures": [
+      {
+        "label": "CMP(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "Data to compress."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "COS": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the cosine of an angle given in radians.",
+    "signatures": [
+      {
+        "label": "COS(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "CPL": {
+    "category": "program",
+    "returns": "string",
+    "doc": "Compiles a ProvideX statement held in a string into its internal (tokenised) form; LST() converts it back to text.",
+    "signatures": [
+      {
+        "label": "CPL(statement$)",
+        "params": [
+          {
+            "name": "statement$",
+            "doc": "Source text of a statement."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "CRC": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Returns a 2-byte CRC (cyclic redundancy check) of a string, optionally continuing from a previous 2-byte CRC seed.",
+    "signatures": [
+      {
+        "label": "CRC(string$[, seed$])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "Data to checksum."
+          },
+          {
+            "name": "seed$",
+            "doc": "Optional 2-byte starting CRC (e.g. result of a previous CRC call)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "CSE": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Internal function accepting a list of values of one type (all numeric or all string). Purpose not documented; returns 0 in tests.",
+    "signatures": [
+      {
+        "label": "CSE(value[, value...])",
+        "params": [
+          {
+            "name": "value",
+            "doc": "Values (all numeric or all string)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": null,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "CTL": {
+    "category": "gui",
+    "returns": "number",
+    "doc": "Returns control/terminal information for a channel and item. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "CTL(chan, item)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          },
+          {
+            "name": "item",
+            "doc": "Item number or name$."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "CVS": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Convert string: applies the conversions selected by the (additive) code: 1 strip leading spaces, 2 strip trailing spaces, 4 upper-case, 8 lower-case, 16 replace non-printable characters with spaces, 32 compress multiple spaces to one, 256 capitalise words. E.g. CVS(A$,3) trims both ends.",
+    "signatures": [
+      {
+        "label": "CVS(string$, code)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String to convert."
+          },
+          {
+            "name": "code",
+            "doc": "Sum of conversion codes (1,2,4,8,16,32,256...)."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": false,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "DEC": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Converts a binary string to a signed (two's complement) integer, e.g. DEC($00FF$)=255, DEC($FF$)=-1. Inverse of BIN().",
+    "signatures": [
+      {
+        "label": "DEC(binary$)",
+        "params": [
+          {
+            "name": "binary$",
+            "doc": "Binary string (big-endian)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "DIM": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Returns a string of the given length filled with spaces, or with repetitions of fill$ (truncated to length).",
+    "signatures": [
+      {
+        "label": "DIM(length[, fill$])",
+        "params": [
+          {
+            "name": "length",
+            "doc": "Length of the result."
+          },
+          {
+            "name": "fill$",
+            "doc": "Optional fill pattern (default space)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "DIR": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the current directory of a drive, e.g. DIR(\"\") for the current drive, DIR(\"C:\").",
+    "signatures": [
+      {
+        "label": "DIR(drive$)",
+        "params": [
+          {
+            "name": "drive$",
+            "doc": "Drive letter (\"\" = current drive)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "DLL": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Calls a function in a Windows DLL and returns its numeric result. Arguments after the function name are passed to the DLL function.",
+    "signatures": [
+      {
+        "label": "DLL(dll$, function$[, arg...])",
+        "params": [
+          {
+            "name": "dll$",
+            "doc": "DLL name or handle."
+          },
+          {
+            "name": "function$",
+            "doc": "Exported function name."
+          },
+          {
+            "name": "arg",
+            "doc": "Arguments passed to the function."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": null,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "DLX": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Extended form of DLL(): calls a function in a Windows DLL (different calling/argument conventions).",
+    "signatures": [
+      {
+        "label": "DLX(dll$, function$[, arg...])",
+        "params": [
+          {
+            "name": "dll$",
+            "doc": "DLL name or handle."
+          },
+          {
+            "name": "function$",
+            "doc": "Exported function name."
+          },
+          {
+            "name": "arg",
+            "doc": "Arguments."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": null,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "DSK": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the current disk drive (e.g. DSK(\"\")=\"E:\"), or validates/returns the given drive.",
+    "signatures": [
+      {
+        "label": "DSK(drive$)",
+        "params": [
+          {
+            "name": "drive$",
+            "doc": "Drive (\"\" = current)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "DTE": {
+    "category": "date",
+    "returns": "string",
+    "doc": "Formats a Julian date (and optional time in hours) as a string. DTE(0) is today. Format codes include %Y year, %Yz 2-digit year, %M/%Mz month, %Ms/%Ml month name short/long, %D/%Dz day, %Ds/%Dl day name, %H/%Hz hour, %m/%mz minutes, %s seconds. Without a format the DAY_FORMAT style is used.",
+    "signatures": [
+      {
+        "label": "DTE(julian[, time][:format$])",
+        "params": [
+          {
+            "name": "julian",
+            "doc": "Julian date as returned by JUL() (0 = today)."
+          },
+          {
+            "name": "time",
+            "doc": "Optional time of day in hours (e.g. 12.5 = 12:30)."
+          },
+          {
+            "name": "format$",
+            "doc": "Optional format mask, after a colon."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "colonForm": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "ENV": {
+    "category": "system",
+    "returns": "string",
+    "doc": "Returns the value of an operating-system environment variable, or with a number the n-th \"NAME=value\" entry of the environment. Returns \"\" if not set.",
+    "signatures": [
+      {
+        "label": "ENV(name$)",
+        "params": [
+          {
+            "name": "name$",
+            "doc": "Environment variable name."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      },
+      {
+        "label": "ENV(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Entry number (1-based)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "EPT": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the decimal exponent of a number: the number of digits before the decimal point (e.g. EPT(1234.5)=4, EPT(0.05)=-1).",
+    "signatures": [
+      {
+        "label": "EPT(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "ERR": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Returns the position (1-based) of the current error number (ERR) within the argument list, or 0 if it is not in the list. Commonly used as ON ERR(11,12) GOTO ...",
+    "signatures": [
+      {
+        "label": "ERR(errnum[, errnum...])",
+        "params": [
+          {
+            "name": "errnum",
+            "doc": "Error numbers to test."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": null,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "EVN": {
+    "category": "program",
+    "returns": "number",
+    "doc": "Evaluates a numeric expression held in a string and returns its value, e.g. EVN(\"1+2\")=3.",
+    "signatures": [
+      {
+        "label": "EVN(expr$[, default])",
+        "params": [
+          {
+            "name": "expr$",
+            "doc": "Numeric expression text."
+          },
+          {
+            "name": "default",
+            "doc": "Optional value (semantics not confirmed)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "EVS": {
+    "category": "program",
+    "returns": "string",
+    "doc": "Evaluates a string expression held in a string and returns its value.",
+    "signatures": [
+      {
+        "label": "EVS(expr$[, default$])",
+        "params": [
+          {
+            "name": "expr$",
+            "doc": "String expression text."
+          },
+          {
+            "name": "default$",
+            "doc": "Optional value (semantics not confirmed)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "EXP": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns 10 raised to the given power (EXP(1)=10). Note: ProvideX EXP/LOG use base 10.",
+    "signatures": [
+      {
+        "label": "EXP(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "FFN": {
+    "category": "program",
+    "returns": "number",
+    "doc": "Find function: looks up a function/name and returns a reference number, or -1 if not found.",
+    "signatures": [
+      {
+        "label": "FFN(name$)",
+        "params": [
+          {
+            "name": "name$",
+            "doc": "Name to look up."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "FIB": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the File Information Block of an open channel: a binary string describing the file (type, key and record sizes, path, etc.).",
+    "signatures": [
+      {
+        "label": "FIB(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "FID": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the file identifier/description string of an open channel (FID(0) is the terminal id).",
+    "signatures": [
+      {
+        "label": "FID(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "FIN": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns file information for an open channel (binary string including counts, sizes, path). An optional item name selects specific information.",
+    "signatures": [
+      {
+        "label": "FIN(chan[, item$])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          },
+          {
+            "name": "item$",
+            "doc": "Optional information selector."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "FPT": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the fractional part of a number (FPT(12.75)=.75, FPT(-2.25)=-.25).",
+    "signatures": [
+      {
+        "label": "FPT(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "GAP": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Sets the high bit of each character to give odd parity (Generate ASCII Parity, odd). See GEP() for even parity.",
+    "signatures": [
+      {
+        "label": "GAP(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "GBL": {
+    "category": "system",
+    "returns": "string",
+    "doc": "Reads or sets a global string value shared across programs: GBL(name$) returns it, GBL(name$, value$) sets and returns it.",
+    "signatures": [
+      {
+        "label": "GBL(name$[, value$])",
+        "params": [
+          {
+            "name": "name$",
+            "doc": "Global name."
+          },
+          {
+            "name": "value$",
+            "doc": "Optional new value."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "GEP": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Adjusts the high bit of each character to give even parity. See GAP() for odd parity.",
+    "signatures": [
+      {
+        "label": "GEP(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "HSA": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Internal numeric function (returns 0 in tests); purpose not documented.",
+    "signatures": [
+      {
+        "label": "HSA(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Selector."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "HSH": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Returns a hash of a string: with no type a 2-byte hash; type 1 = MD5, 2 = MD4, 3 = MD2, 4 = SHA-1 (binary results; use HTA() to display).",
+    "signatures": [
+      {
+        "label": "HSH(string$[, type])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "Data to hash."
+          },
+          {
+            "name": "type",
+            "doc": "Optional hash algorithm (1 MD5, 2 MD4, 3 MD2, 4 SHA-1)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      },
+      {
+        "label": "HSH(string$, key$[, type[, n]])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "Data to hash."
+          },
+          {
+            "name": "key$",
+            "doc": "Second string argument (semantics not confirmed)."
+          },
+          {
+            "name": "type",
+            "doc": "Hash algorithm."
+          },
+          {
+            "name": "n",
+            "doc": "Optional value (semantics not confirmed)."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 4,
+        "unverified": true
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": false,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "HTA": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Hex-to-ASCII: returns the hexadecimal representation of a string (HTA(\"ABC\")=\"414243\"). Inverse of ATH().",
+    "signatures": [
+      {
+        "label": "HTA(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "HWN": {
+    "category": "gui",
+    "returns": "number",
+    "doc": "Returns the Windows handle (HWND) of the window associated with a channel (HWN(0) for the main window).",
+    "signatures": [
+      {
+        "label": "HWN(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "I3E": {
+    "category": "string",
+    "returns": "any",
+    "doc": "IEEE conversion: with a number returns its 8-byte IEEE double representation; with an 8-byte string returns the number it encodes.",
+    "signatures": [
+      {
+        "label": "I3E(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1,
+        "returns": "string"
+      },
+      {
+        "label": "I3E(ieee$)",
+        "params": [
+          {
+            "name": "ieee$",
+            "doc": "8-byte IEEE double string."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1,
+        "returns": "number"
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "I86": {
+    "category": "string",
+    "returns": "any",
+    "doc": "Intel-format numeric conversion function listed in the lexer table. It is not accepted by the 9.62 syntax checker in any tested argument form.",
+    "signatures": [
+      {
+        "label": "I86(value)",
+        "params": [
+          {
+            "name": "value",
+            "doc": "Value to convert."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "accepted": false,
+          "returns": null
+        }
+      ],
+      "confirmed": false
+    }
+  },
+  "IND": {
+    "category": "file",
+    "returns": "number",
+    "doc": "Returns the index (0-based relative record number) of the next record on the channel.",
+    "signatures": [
+      {
+        "label": "IND(chan[, KNO=n][, KEY=k$][, END=ref][, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "END",
+      "KNO",
+      "KEY",
+      "RNO"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "END": true,
+            "KNO": true,
+            "KEY": true,
+            "RNO": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "INT": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the integer part of a number (truncates toward zero: INT(-2.5)=-2).",
+    "signatures": [
+      {
+        "label": "INT(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "IOL": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the IOList (embedded data dictionary IOList) associated with a channel, optionally a named one.",
+    "signatures": [
+      {
+        "label": "IOL(chan[, name$])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          },
+          {
+            "name": "name$",
+            "doc": "Optional IOList name/selector."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "IOR": {
+    "category": "bitwise",
+    "returns": "any",
+    "doc": "Bitwise inclusive OR of two strings (byte by byte) or two integers (IOR(12,10)=14).",
+    "signatures": [
+      {
+        "label": "IOR(string1$, string2$)",
+        "params": [
+          {
+            "name": "string1$",
+            "doc": "First string."
+          },
+          {
+            "name": "string2$",
+            "doc": "Second string."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2,
+        "returns": "string"
+      },
+      {
+        "label": "IOR(num1, num2)",
+        "params": [
+          {
+            "name": "num1",
+            "doc": "First integer."
+          },
+          {
+            "name": "num2",
+            "doc": "Second integer."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2,
+        "returns": "number"
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "JST": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Justifies a string within the given length (truncating if longer). Mode 0 = right-justify, 1 = left-justify (default), 2 = centre; fill$ gives the pad character (default space).",
+    "signatures": [
+      {
+        "label": "JST(string$, length[, mode][, fill$])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String to justify."
+          },
+          {
+            "name": "length",
+            "doc": "Result length."
+          },
+          {
+            "name": "mode",
+            "doc": "0 right, 1 left (default), 2 centre."
+          },
+          {
+            "name": "fill$",
+            "doc": "Pad character."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 4
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "JUL": {
+    "category": "date",
+    "returns": "number",
+    "doc": "Returns the Julian day number for a date (relative to the 'BY' base-year parameter). JUL(year,month,day) or JUL(date$) where date$ is in the current DAY format. DTE() converts back.",
+    "signatures": [
+      {
+        "label": "JUL(year, month, day)",
+        "params": [
+          {
+            "name": "year",
+            "doc": "Year (4-digit)."
+          },
+          {
+            "name": "month",
+            "doc": "Month 1-12."
+          },
+          {
+            "name": "day",
+            "doc": "Day of month."
+          }
+        ],
+        "minArgs": 3,
+        "maxArgs": 3
+      },
+      {
+        "label": "JUL(date$)",
+        "params": [
+          {
+            "name": "date$",
+            "doc": "Date string in DAY format (e.g. \"01/01/20\")."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "KEC": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the current key (key of the last record accessed) on the channel without reading the record.",
+    "signatures": [
+      {
+        "label": "KEC(chan[, KNO=, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "KNO"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "KNO": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "KEF": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the first key in the file (for the current or KNO= key chain) on the channel without reading the record.",
+    "signatures": [
+      {
+        "label": "KEF(chan[, KNO=, END=ref, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "END",
+      "KNO"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "END": true,
+            "KNO": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "KEL": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the last key in the file (for the current or KNO= key chain) on the channel without reading the record.",
+    "signatures": [
+      {
+        "label": "KEL(chan[, KNO=, END=ref, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "END",
+      "KNO"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "END": true,
+            "KNO": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "KEN": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the next key (key of the next record) on the channel without reading the record.",
+    "signatures": [
+      {
+        "label": "KEN(chan[, KNO=, IND=, KEY=, RNO=, END=ref, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "END",
+      "KNO",
+      "IND",
+      "KEY",
+      "RNO"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "END": true,
+            "KNO": true,
+            "IND": true,
+            "KEY": true,
+            "RNO": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "KEP": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the prior key (key of the previous record) on the channel without reading the record.",
+    "signatures": [
+      {
+        "label": "KEP(chan[, KNO=, IND=, KEY=, RNO=, END=ref, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "END",
+      "KNO",
+      "IND",
+      "KEY",
+      "RNO"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "END": true,
+            "KNO": true,
+            "IND": true,
+            "KEY": true,
+            "RNO": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "KEY": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the key of the next record on the channel without reading the record.",
+    "signatures": [
+      {
+        "label": "KEY(chan[, KNO=, IND=, RNO=, END=ref, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "END",
+      "KNO",
+      "IND",
+      "RNO"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "END": true,
+            "KNO": true,
+            "IND": true,
+            "RNO": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "KGN": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Key generation function: builds a key from a key definition and record data. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "KGN(def$, data$, n)",
+        "params": [
+          {
+            "name": "def$",
+            "doc": "Key definition."
+          },
+          {
+            "name": "data$",
+            "doc": "Record data."
+          },
+          {
+            "name": "n",
+            "doc": "Key number."
+          }
+        ],
+        "minArgs": 3,
+        "maxArgs": 3
+      },
+      {
+        "label": "KGN(def$, data$, x$, n)",
+        "params": [
+          {
+            "name": "def$",
+            "doc": "Key definition."
+          },
+          {
+            "name": "data$",
+            "doc": "Record data."
+          },
+          {
+            "name": "x$",
+            "doc": "Additional string."
+          },
+          {
+            "name": "n",
+            "doc": "Key number."
+          }
+        ],
+        "minArgs": 4,
+        "maxArgs": 4
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "LCS": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Returns the string converted to lower case.",
+    "signatures": [
+      {
+        "label": "LCS(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "LEN": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Returns the length of a string in bytes.",
+    "signatures": [
+      {
+        "label": "LEN(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "LNO": {
+    "category": "program",
+    "returns": "number",
+    "doc": "Returns the statement (line) number for a statement reference (e.g. a label or line number).",
+    "signatures": [
+      {
+        "label": "LNO(stmtref)",
+        "params": [
+          {
+            "name": "stmtref",
+            "doc": "Line number or label."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "LOG": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the base-10 logarithm of a positive number (LOG(100)=2).",
+    "signatures": [
+      {
+        "label": "LOG(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "LRC": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Returns a 1-byte longitudinal redundancy check (XOR of all bytes) of a string.",
+    "signatures": [
+      {
+        "label": "LRC(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "LST": {
+    "category": "program",
+    "returns": "string",
+    "doc": "Converts a compiled (internal format) statement, e.g. from CPL() or PGM(), back into listable source text.",
+    "signatures": [
+      {
+        "label": "LST(compiled$)",
+        "params": [
+          {
+            "name": "compiled$",
+            "doc": "Compiled statement."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MAX": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the largest of the numeric arguments.",
+    "signatures": [
+      {
+        "label": "MAX(num1[, num2...])",
+        "params": [
+          {
+            "name": "num1",
+            "doc": "Numbers to compare."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": null,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MEM": {
+    "category": "system",
+    "returns": "any",
+    "doc": "Memory access function: MEM(n) returns a number, MEM(n, length) returns a string. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "MEM(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Address/selector."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1,
+        "returns": "number"
+      },
+      {
+        "label": "MEM(n, length)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Address/selector."
+          },
+          {
+            "name": "length",
+            "doc": "Length."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2,
+        "returns": "string"
+      }
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MID": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Returns a substring starting at position start (1-based; negative counts from the end) for length characters (default: to the end).",
+    "signatures": [
+      {
+        "label": "MID(string$, start[, length])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          },
+          {
+            "name": "start",
+            "doc": "Start position (negative = from end)."
+          },
+          {
+            "name": "length",
+            "doc": "Number of characters."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 3
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MIN": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the smallest of the numeric arguments.",
+    "signatures": [
+      {
+        "label": "MIN(num1[, num2...])",
+        "params": [
+          {
+            "name": "num1",
+            "doc": "Numbers to compare."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": null,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MNM": {
+    "category": "io",
+    "returns": "string",
+    "doc": "Returns the output sequence associated with a mnemonic for a channel.",
+    "signatures": [
+      {
+        "label": "MNM(mnemonic$[, chan])",
+        "params": [
+          {
+            "name": "mnemonic$",
+            "doc": "Mnemonic name."
+          },
+          {
+            "name": "chan",
+            "doc": "Optional channel."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MOD": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the remainder of num divided by divisor (result has the sign of the divisor: MOD(-7,3)=2).",
+    "signatures": [
+      {
+        "label": "MOD(num, divisor)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          },
+          {
+            "name": "divisor",
+            "doc": "Divisor."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MSG": {
+    "category": "system",
+    "returns": "string",
+    "doc": "Returns message text: MSG(n) gives the text for error number n; MSG(key$[, arg$...]) retrieves a message from the message library (MESSAGE_LIB).",
+    "signatures": [
+      {
+        "label": "MSG(errnum)",
+        "params": [
+          {
+            "name": "errnum",
+            "doc": "Error number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      },
+      {
+        "label": "MSG(key$[, arg$...])",
+        "params": [
+          {
+            "name": "key$",
+            "doc": "Message key."
+          },
+          {
+            "name": "arg$",
+            "doc": "Substitution arguments."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": null,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MSK": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Searches a string using a regular-expression mask and returns the position of the first match (0 if none). The length of the match is placed in MSL.",
+    "signatures": [
+      {
+        "label": "MSK(string$, mask$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          },
+          {
+            "name": "mask$",
+            "doc": "Regular expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MXC": {
+    "category": "gui",
+    "returns": "number",
+    "doc": "Returns the highest column number (0-based) of the window/terminal on the channel (e.g. 79).",
+    "signatures": [
+      {
+        "label": "MXC(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "MXL": {
+    "category": "gui",
+    "returns": "number",
+    "doc": "Returns the highest line number (0-based) of the window/terminal on the channel (e.g. 24).",
+    "signatures": [
+      {
+        "label": "MXL(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "NEW": {
+    "category": "oop",
+    "returns": "number",
+    "doc": "Creates a new object instance of the named class (DEF CLASS) and returns its object handle; extra arguments are passed to the ON_CREATE method.",
+    "signatures": [
+      {
+        "label": "NEW(class$[, arg...])",
+        "params": [
+          {
+            "name": "class$",
+            "doc": "Class name (optionally \"class;program\")."
+          },
+          {
+            "name": "arg",
+            "doc": "Arguments for ON_CREATE."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": null,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "NOT": {
+    "category": "bitwise",
+    "returns": "any",
+    "doc": "With a number, logical NOT (1 if zero, else 0). With a string, returns the bitwise complement of each byte.",
+    "signatures": [
+      {
+        "label": "NOT(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1,
+        "returns": "number"
+      },
+      {
+        "label": "NOT(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1,
+        "returns": "string"
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "NUL": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Returns 1 if the string is null or contains only spaces, otherwise 0.",
+    "signatures": [
+      {
+        "label": "NUL(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "NUM": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Converts a string to a number (commas are ignored); errors (#26) if the string is not numeric unless ERR= is given. VAL is an alias.",
+    "signatures": [
+      {
+        "label": "NUM(string$[, ERR=ref])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "OBJ": {
+    "category": "gui",
+    "returns": "string",
+    "doc": "Returns binary information about a window/object on a channel. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "OBJ(chan[, x$])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          },
+          {
+            "name": "x$",
+            "doc": "Optional string."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "OPT": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the OPEN options (OPT= string) in effect for a channel.",
+    "signatures": [
+      {
+        "label": "OPT(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "PAD": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Pads or truncates a string to the given length. Mode 0 = pad on the left (right-justify), 1 = pad on the right (default), 2 = centre; fill$ gives the pad character.",
+    "signatures": [
+      {
+        "label": "PAD(string$, length[, mode][, fill$])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String to pad."
+          },
+          {
+            "name": "length",
+            "doc": "Result length."
+          },
+          {
+            "name": "mode",
+            "doc": "0 left, 1 right (default), 2 centre."
+          },
+          {
+            "name": "fill$",
+            "doc": "Pad character."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 4
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "PCK": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Packs a number into ProvideX packed (BCD-style) string format of the given length (default 8). UPK() unpacks it.",
+    "signatures": [
+      {
+        "label": "PCK(num[, length])",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          },
+          {
+            "name": "length",
+            "doc": "Result length in bytes."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "PFX": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns prefix (search path) information; PFX(0) returns the current prefix list (as in the PFX system variable).",
+    "signatures": [
+      {
+        "label": "PFX(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Prefix selector (0 = data prefix list)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "PGM": {
+    "category": "program",
+    "returns": "string",
+    "doc": "Returns program information: a compiled statement of the current program by number (see LST()), or PGM(-1) for the program name.",
+    "signatures": [
+      {
+        "label": "PGM(stmt[, level])",
+        "params": [
+          {
+            "name": "stmt",
+            "doc": "Statement number (-1 = program name)."
+          },
+          {
+            "name": "level",
+            "doc": "Optional program stack level."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "POS": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Returns the position in string$ where the relation with find$ is first satisfied (0 if none); usually POS(find$=string$). step gives the search increment (negative searches backwards from the end) and occurrence the n-th match (0 returns the count of matches).",
+    "signatures": [
+      {
+        "label": "POS(find$=string$[, step[, occurrence]])",
+        "params": [
+          {
+            "name": "find$=string$",
+            "doc": "Relation: find$ followed by an operator (=, <>, <, >, <=, >=) and the string to search."
+          },
+          {
+            "name": "step",
+            "doc": "Search step (default 1; negative searches from the end)."
+          },
+          {
+            "name": "occurrence",
+            "doc": "Which occurrence to find (0 = count occurrences)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 3,
+        "form": "relation"
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "PRC": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Rounds a number to the given number of decimal places (default: the current PRECISION).",
+    "signatures": [
+      {
+        "label": "PRC(num[, places])",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          },
+          {
+            "name": "places",
+            "doc": "Decimal places."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "PRM": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Returns the current value of a system parameter, e.g. PRM('BY'). The parameter is written as a quoted mnemonic like 'XX'.",
+    "signatures": [
+      {
+        "label": "PRM('XX')",
+        "params": [
+          {
+            "name": "'XX'",
+            "doc": "System parameter mnemonic."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "PTH": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the full path of the file/device open on a channel.",
+    "signatures": [
+      {
+        "label": "PTH(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "PUB": {
+    "category": "oop",
+    "returns": "string",
+    "doc": "Returns public (property/method) information for an object/channel. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "PUB(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Object handle or channel."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "RCD": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the next (or the specified) record from the channel as a single string without moving into variables.",
+    "signatures": [
+      {
+        "label": "RCD(chan[, KEY=k$][, KNO=n][, IND=n][, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "END",
+      "DOM",
+      "KNO",
+      "IND",
+      "KEY",
+      "BSY",
+      "RNO"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "END": true,
+            "DOM": true,
+            "KNO": true,
+            "IND": true,
+            "KEY": true,
+            "BSY": true,
+            "RNO": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "RDX": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Radix conversion of a string into a packed (radix-encoded) binary form.",
+    "signatures": [
+      {
+        "label": "RDX(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "REC": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Record function: builds/returns a record string from a composite string or IOList (honours SEP=).",
+    "signatures": [
+      {
+        "label": "REC(name$[, SEP=char$])",
+        "params": [
+          {
+            "name": "name$",
+            "doc": "Record/composite name or IOList."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "SEP"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "SEP": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "REF": {
+    "category": "oop",
+    "returns": "number",
+    "doc": "Object reference function (e.g. reference count of an object handle).",
+    "signatures": [
+      {
+        "label": "REF(handle)",
+        "params": [
+          {
+            "name": "handle",
+            "doc": "Object handle."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "RND": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns a random number: RND(0) gives a fraction between 0 and 1; a positive argument n returns an integer from 0 to n-1; a negative argument reseeds the generator. See also the RND system variable.",
+    "signatures": [
+      {
+        "label": "RND(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "0, positive range, or negative seed."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "RNO": {
+    "category": "file",
+    "returns": "number",
+    "doc": "Returns the record number of the next record on the channel.",
+    "signatures": [
+      {
+        "label": "RNO(chan[, KEY=k$][, KNO=n][, IND=n][, END=ref][, ERR=ref])",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR",
+      "END",
+      "KNO",
+      "IND",
+      "KEY"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true,
+            "END": true,
+            "KNO": true,
+            "IND": true,
+            "KEY": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SCALL": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Alias of SYS(): executes an operating-system command and returns its exit status.",
+    "signatures": [
+      {
+        "label": "SCALL(command$)",
+        "params": [
+          {
+            "name": "command$",
+            "doc": "Command line."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SEP": {
+    "category": "file",
+    "returns": "string",
+    "doc": "Returns the field separator in effect for the given channel.",
+    "signatures": [
+      {
+        "label": "SEP(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SGN": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the sign of a number: -1, 0 or 1.",
+    "signatures": [
+      {
+        "label": "SGN(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SIN": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the sine of an angle given in radians.",
+    "signatures": [
+      {
+        "label": "SIN(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SQR": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the square root of a non-negative number.",
+    "signatures": [
+      {
+        "label": "SQR(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SRT": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Sorts a string made of fixed-length segments of the given length into ascending order (SRT(\"ccbbaa\",2)=\"aabbcc\").",
+    "signatures": [
+      {
+        "label": "SRT(string$[, length])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String of fixed-length items."
+          },
+          {
+            "name": "length",
+            "doc": "Item length."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SSZ": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Returns a size value for the session (e.g. string/stack size). Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "SSZ(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Selector."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "STK": {
+    "category": "program",
+    "returns": "string",
+    "doc": "Returns information about the program/GOSUB stack. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "STK(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Stack level/selector."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "STP": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Strips characters (default spaces) from a string. Mode 0 = leading, 1 = trailing (default), 2 = both ends, 3 = all occurrences.",
+    "signatures": [
+      {
+        "label": "STP(string$[, mode][, char$])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          },
+          {
+            "name": "mode",
+            "doc": "0 leading, 1 trailing, 2 both, 3 all."
+          },
+          {
+            "name": "char$",
+            "doc": "Character to strip (default space)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 3
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "STR": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Converts a number to a string, optionally formatted with a mask after a colon (STR(1234.5:\"#,##0.00\")=\"1,234.50\"). With a string argument, returns it unchanged.",
+    "signatures": [
+      {
+        "label": "STR(num[:mask$])",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          },
+          {
+            "name": "mask$",
+            "doc": "Optional format mask (# 0 , . etc.)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      },
+      {
+        "label": "STR(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": false,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "colonForm": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": false,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SUB": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Substitutes new$ for every occurrence of old$ in string$, or only the given occurrence.",
+    "signatures": [
+      {
+        "label": "SUB(string$, old$, new$[, occurrence])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          },
+          {
+            "name": "old$",
+            "doc": "Text to replace."
+          },
+          {
+            "name": "new$",
+            "doc": "Replacement text."
+          },
+          {
+            "name": "occurrence",
+            "doc": "Optional: replace only this occurrence."
+          }
+        ],
+        "minArgs": 3,
+        "maxArgs": 4
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SWP": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Swaps byte order in a string: no mode reverses the string; 1 swaps adjacent byte pairs; 2 swaps 2-byte halves within each 4 bytes; 3 reverses each 4-byte group.",
+    "signatures": [
+      {
+        "label": "SWP(string$[, mode])",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          },
+          {
+            "name": "mode",
+            "doc": "Swap mode (1, 2, 3)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "SYS": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Executes an operating-system command and returns its exit status. SCALL is an alias.",
+    "signatures": [
+      {
+        "label": "SYS(command$)",
+        "params": [
+          {
+            "name": "command$",
+            "doc": "Command line."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "TAN": {
+    "category": "math",
+    "returns": "number",
+    "doc": "Returns the tangent of an angle given in radians.",
+    "signatures": [
+      {
+        "label": "TAN(num)",
+        "params": [
+          {
+            "name": "num",
+            "doc": "Numeric expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "TBL": {
+    "category": "string",
+    "returns": "any",
+    "doc": "Table lookup: TBL(index, v0, v1, ...) returns v0 when index is 0, v1 when 1, etc. (error if out of range). TBL(string$, from$, to$) translates characters of string$ found in from$ to the corresponding characters of to$.",
+    "signatures": [
+      {
+        "label": "TBL(index, value0, value1[, ...])",
+        "params": [
+          {
+            "name": "index",
+            "doc": "0-based selector."
+          },
+          {
+            "name": "value0",
+            "doc": "Value returned for 0 (all values the same type)."
+          },
+          {
+            "name": "value1",
+            "doc": "Value returned for 1."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": null
+      },
+      {
+        "label": "TBL(string$, from$, to$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          },
+          {
+            "name": "from$",
+            "doc": "Characters to translate."
+          },
+          {
+            "name": "to$",
+            "doc": "Replacement characters."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 3,
+        "returns": "string"
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "accepted": true,
+          "returns": "number"
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "TCB": {
+    "category": "system",
+    "returns": "any",
+    "doc": "Task Control Block: TCB(n) returns numeric task/session information item n (e.g. current statement, error line, etc.). A string form TCB(name$) also exists.",
+    "signatures": [
+      {
+        "label": "TCB(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Item number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1,
+        "returns": "number"
+      },
+      {
+        "label": "TCB(name$[, x$])",
+        "params": [
+          {
+            "name": "name$",
+            "doc": "Item name."
+          },
+          {
+            "name": "x$",
+            "doc": "Optional."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2,
+        "returns": "string",
+        "unverified": true
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": false,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "TMR": {
+    "category": "system",
+    "returns": "number",
+    "doc": "Timer function: returns elapsed time in seconds for a timer selector. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "TMR(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Timer selector."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "TRX": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Translation function on a string. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "TRX(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "TSK": {
+    "category": "system",
+    "returns": "string",
+    "doc": "Returns task/device configuration information for an entry number. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "TSK(n)",
+        "params": [
+          {
+            "name": "n",
+            "doc": "Entry number or name$."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "TXH": {
+    "category": "gui",
+    "returns": "number",
+    "doc": "Returns the height (in pixels) that text$ occupies in the current (or given) font.",
+    "signatures": [
+      {
+        "label": "TXH(text$[, n...])",
+        "params": [
+          {
+            "name": "text$",
+            "doc": "Text to measure."
+          },
+          {
+            "name": "n",
+            "doc": "Optional numeric arguments (e.g. channel/font)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 4
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": false,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "TXW": {
+    "category": "gui",
+    "returns": "number",
+    "doc": "Returns the width (in pixels) that text$ occupies in the current (or given) font.",
+    "signatures": [
+      {
+        "label": "TXW(text$[, n...])",
+        "params": [
+          {
+            "name": "text$",
+            "doc": "Text to measure."
+          },
+          {
+            "name": "n",
+            "doc": "Optional numeric arguments (e.g. channel/font)."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 4
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": false,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "UCP": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Uncompresses a string produced by CMP().",
+    "signatures": [
+      {
+        "label": "UCP(compressed$)",
+        "params": [
+          {
+            "name": "compressed$",
+            "doc": "Output of CMP()."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "UCS": {
+    "category": "string",
+    "returns": "string",
+    "doc": "Returns the string converted to upper case.",
+    "signatures": [
+      {
+        "label": "UCS(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "UPK": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Unpacks a number stored in ProvideX packed format (see PCK()).",
+    "signatures": [
+      {
+        "label": "UPK(packed$)",
+        "params": [
+          {
+            "name": "packed$",
+            "doc": "Packed numeric string."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "VAL": {
+    "category": "string",
+    "returns": "number",
+    "doc": "Alias of NUM(): converts a string to a number.",
+    "signatures": [
+      {
+        "label": "VAL(string$)",
+        "params": [
+          {
+            "name": "string$",
+            "doc": "String expression."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "VIN": {
+    "category": "program",
+    "returns": "number",
+    "doc": "Returns the value of the numeric variable whose name is given in a string (VIN(\"X\")); an object handle may precede the name to read an object property.",
+    "signatures": [
+      {
+        "label": "VIN(name$[, index])",
+        "params": [
+          {
+            "name": "name$",
+            "doc": "Variable name."
+          },
+          {
+            "name": "index",
+            "doc": "Optional array index."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      },
+      {
+        "label": "VIN(object, name$[, index])",
+        "params": [
+          {
+            "name": "object",
+            "doc": "Object handle."
+          },
+          {
+            "name": "name$",
+            "doc": "Property name."
+          },
+          {
+            "name": "index",
+            "doc": "Optional index."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 3,
+        "unverified": true
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "VIS": {
+    "category": "program",
+    "returns": "string",
+    "doc": "Returns the value of the string variable whose name is given in a string (VIS(\"Y$\")); an object handle may precede the name to read an object property.",
+    "signatures": [
+      {
+        "label": "VIS(name$[, index])",
+        "params": [
+          {
+            "name": "name$",
+            "doc": "Variable name."
+          },
+          {
+            "name": "index",
+            "doc": "Optional array index."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 2
+      },
+      {
+        "label": "VIS(object, name$[, index])",
+        "params": [
+          {
+            "name": "object",
+            "doc": "Object handle."
+          },
+          {
+            "name": "name$",
+            "doc": "Property name."
+          },
+          {
+            "name": "index",
+            "doc": "Optional index."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 3,
+        "unverified": true
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "XEQ": {
+    "category": "program",
+    "returns": "any",
+    "doc": "Executes a program (or program;label) as a function and returns the value it EXITs/RETURNs; further arguments are passed to it. Exact semantics not confirmed.",
+    "signatures": [
+      {
+        "label": "XEQ(program$, arg[, ...])",
+        "params": [
+          {
+            "name": "program$",
+            "doc": "Program to execute."
+          },
+          {
+            "name": "arg",
+            "doc": "Arguments."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": null
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "accepted": true,
+          "returns": "number"
+        }
+      ],
+      "confirmed": true
+    }
+  },
+  "XFA": {
+    "category": "file",
+    "returns": "any",
+    "doc": "Extended file attribute function listed in the lexer table. It is not accepted by the 9.62 syntax checker in any tested argument form.",
+    "signatures": [
+      {
+        "label": "XFA(chan)",
+        "params": [
+          {
+            "name": "chan",
+            "doc": "Channel (logical file) number."
+          }
+        ],
+        "minArgs": 1,
+        "maxArgs": 1
+      }
+    ],
+    "unverified": true,
+    "validation": {
+      "signatures": [
+        {
+          "accepted": false,
+          "returns": null
+        }
+      ],
+      "confirmed": false
+    }
+  },
+  "XOR": {
+    "category": "bitwise",
+    "returns": "any",
+    "doc": "Bitwise exclusive OR of two strings (byte by byte) or two integers (XOR(12,10)=6).",
+    "signatures": [
+      {
+        "label": "XOR(string1$, string2$)",
+        "params": [
+          {
+            "name": "string1$",
+            "doc": "First string."
+          },
+          {
+            "name": "string2$",
+            "doc": "Second string."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2,
+        "returns": "string"
+      },
+      {
+        "label": "XOR(num1, num2)",
+        "params": [
+          {
+            "name": "num1",
+            "doc": "First integer."
+          },
+          {
+            "name": "num2",
+            "doc": "Second integer."
+          }
+        ],
+        "minArgs": 2,
+        "maxArgs": 2,
+        "returns": "number"
+      }
+    ],
+    "options": [
+      "ERR"
+    ],
+    "validation": {
+      "signatures": [
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        },
+        {
+          "minArgs": true,
+          "maxArgs": true,
+          "extraArgRejected": true,
+          "fewerArgRejected": true,
+          "returnTypeChecked": true,
+          "options": {
+            "ERR": true
+          }
+        }
+      ],
+      "confirmed": true
+    }
+  }
+}

@@ -1,0 +1,464 @@
+{
+  "name": "providex",
+  "displayName": "Sage ProvideX",
+  "description": "Language support for Sage ProvideX (Sage 100 / MAS 90): syntax highlighting, language server (diagnostics, completion, hover, signature help, go to definition, references, rename, symbols, folding, formatting, semantic tokens) and integration with an installed ProvideX to decompile, compile, syntax-check and run programs.",
+  "version": "0.1.0",
+  "publisher": "da3dsoul",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#003a66",
+    "theme": "dark"
+  },
+  "pricing": "Free",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Formatters",
+    "Snippets"
+  ],
+  "keywords": [
+    "providex",
+    "pvx",
+    "sage 100",
+    "mas 90",
+    "business basic"
+  ],
+  "main": "./dist/client.js",
+  "activationEvents": [
+    "onLanguage:providex",
+    "workspaceContains:**/*.pvx",
+    "onFileSystem:pvxprg",
+    "onCustomEditor:providex.compiledProgram",
+    "onLanguage:pxts",
+    "workspaceContains:**/*.pxts"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "providex",
+        "aliases": [
+          "ProvideX",
+          "pvx"
+        ],
+        "extensions": [
+          ".pvx",
+          ".pvt",
+          ".pvxsrc",
+          ".bbx",
+          ".pxs",
+          ".pvc",
+          ".pvo",
+          ".m4p"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "pxts",
+        "aliases": [
+          "ProvideX/TS",
+          "pxts"
+        ],
+        "extensions": [
+          ".pxts"
+        ],
+        "configuration": "./language-configuration-pxts.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "providex",
+        "scopeName": "source.providex",
+        "path": "./syntaxes/providex.tmLanguage.json"
+      },
+      {
+        "language": "pxts",
+        "scopeName": "source.pxts",
+        "path": "./syntaxes/pxts.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.providex": "providex"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "providex",
+        "path": "./snippets/providex.code-snippets"
+      },
+      {
+        "language": "pxts",
+        "path": "./snippets/pxts.code-snippets"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "providex.compiledProgram",
+        "displayName": "ProvideX Compiled Program",
+        "selector": [
+          {
+            "filenamePattern": "*.pvc"
+          },
+          {
+            "filenamePattern": "*.PVC"
+          },
+          {
+            "filenamePattern": "*.pvo"
+          },
+          {
+            "filenamePattern": "*.m4p"
+          },
+          {
+            "filenamePattern": "*.M4P"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "providex.openCompiled",
+        "title": "Open Compiled Program as Source",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.decompileToFile",
+        "title": "Decompile Program to Text File",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.compile",
+        "title": "Compile Current File",
+        "category": "ProvideX",
+        "icon": "$(package)"
+      },
+      {
+        "command": "providex.checkSyntax",
+        "title": "Check Syntax with ProvideX",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.run",
+        "title": "Run Program",
+        "category": "ProvideX",
+        "icon": "$(play)"
+      },
+      {
+        "command": "providex.evaluate",
+        "title": "Evaluate Expression",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.toggleLineNumbers",
+        "title": "Toggle Statement Numbers",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.renumber",
+        "title": "Renumber Statements",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.chooseHome",
+        "title": "Choose ProvideX Installation",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.showStatus",
+        "title": "Show Status",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.restartServer",
+        "title": "Restart Language Server",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.makeReadable",
+        "title": "Make Readable (hide statement numbers, one statement per line)",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.convertToPxts",
+        "title": "Convert to ProvideX/TS (.pxts)",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.convertFromPxts",
+        "title": "Convert ProvideX/TS to ProvideX (.pvx)",
+        "category": "ProvideX"
+      },
+      {
+        "command": "providex.openCompiledAsPxts",
+        "title": "Open Compiled Program as ProvideX/TS",
+        "category": "ProvideX"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "providex.run",
+          "when": "editorLangId == providex",
+          "group": "navigation"
+        },
+        {
+          "command": "providex.run",
+          "when": "editorLangId == pxts",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "providex.openCompiled",
+          "group": "navigation@90"
+        },
+        {
+          "command": "providex.decompileToFile",
+          "group": "navigation@91"
+        },
+        {
+          "command": "providex.openCompiledAsPxts",
+          "group": "navigation@92"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "providex.compile",
+          "when": "editorLangId == providex",
+          "group": "providex@1"
+        },
+        {
+          "command": "providex.checkSyntax",
+          "when": "editorLangId == providex",
+          "group": "providex@2"
+        },
+        {
+          "command": "providex.convertToPxts",
+          "when": "editorLangId == providex",
+          "group": "providex@3"
+        },
+        {
+          "command": "providex.convertFromPxts",
+          "when": "editorLangId == pxts",
+          "group": "providex@3"
+        },
+        {
+          "command": "providex.compile",
+          "when": "editorLangId == pxts",
+          "group": "providex@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "ProvideX",
+      "properties": {
+        "providex.home": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "ProvideX home directory (the folder containing `pvxwin32.exe` and `Lib`), e.g. `C:\\Sage\\Sage 100\\MAS90\\Home`. Leave empty to auto-detect."
+        },
+        "providex.executable": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Path to `pvxwin32.exe` used by **Run Program**. Defaults to `<home>\\pvxwin32.exe`."
+        },
+        "providex.runArguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "Extra ProvideX command-line options placed before the program name by **Run Program** (e.g. `-hd` to run hidden, or an INI file)."
+        },
+        "providex.bridge.enabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Use the installed ProvideX (via the `ProvideX.Script` COM server) for syntax checking, compiling and decompiling."
+        },
+        "providex.diagnostics.useProvideX": {
+          "type": "string",
+          "enum": [
+            "off",
+            "onSave",
+            "onType"
+          ],
+          "default": "onSave",
+          "markdownDescription": "When to validate the document with the real ProvideX compiler (in addition to the built-in analyzer)."
+        },
+        "providex.diagnostics.undefinedLabels": {
+          "type": "boolean",
+          "default": true,
+          "description": "Report GOTO/GOSUB/ERR= references to labels or statement numbers that do not exist."
+        },
+        "providex.diagnostics.unusedLabels": {
+          "type": "boolean",
+          "default": false,
+          "description": "Report labels that are never referenced."
+        },
+        "providex.diagnostics.blockStructure": {
+          "type": "boolean",
+          "default": true,
+          "description": "Report unbalanced FOR/NEXT, WHILE/WEND, REPEAT/UNTIL, SWITCH/END SWITCH, braces, DEF CLASS/END DEF."
+        },
+        "providex.format.keywordCase": {
+          "type": "string",
+          "enum": [
+            "upper",
+            "lower",
+            "preserve"
+          ],
+          "default": "upper",
+          "description": "Case applied to directives, functions and system variables when formatting."
+        },
+        "providex.format.indentBlocks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Indent statements inside blocks when formatting code without statement numbers (ProvideX does not store indentation)."
+        },
+        "providex.format.indentSize": {
+          "type": "number",
+          "default": 2,
+          "description": "Spaces per indentation level when providex.format.indentBlocks is enabled."
+        },
+        "providex.compile.outputExtension": {
+          "type": "string",
+          "default": ".pvc",
+          "description": "Extension used for the compiled program when compiling a text source file (the compiled file is written next to the source)."
+        },
+        "providex.compile.onSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically compile text source files when saved."
+        },
+        "providex.trace.server": {
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the ProvideX language server."
+        },
+        "providex.classPath": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "Additional folders searched for compiled class programs (`DEF CLASS`) used for member completion, hover and navigation (e.g. Sage 100 module folders). The `MAS90` folder next to `providex.home` is searched automatically."
+        },
+        "providex.programArguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "Arguments passed to the program by **Run Program** (after `-ARG`; read them with `ARG(1)`, `ARG(2)`, …)."
+        },
+        "providex.compiledView": {
+          "type": "string",
+          "enum": [
+            "readable",
+            "typescript",
+            "numbered"
+          ],
+          "default": "readable",
+          "enumDescriptions": [
+            "Hide statement numbers (jump targets become labels), one statement per line, single-line IF ... ELSE expanded into blocks, indented and spaced. Numbers are restored on save; unchanged statements keep their original numbers.",
+            "ProvideX/TS: TypeScript-style syntax (braces, // comments, obj.Method(), functions with local scope). Lossless: saved back as ProvideX.",
+            "Show the program exactly as ProvideX LISTs it."
+          ],
+          "markdownDescription": "How compiled programs are shown when opened as source."
+        },
+        "providex.readable.splitStatements": {
+          "type": "boolean",
+          "default": true,
+          "description": "Readable view: put each statement of a multi-statement line (A=1; B=2) on its own line."
+        },
+        "providex.readable.expandIf": {
+          "type": "boolean",
+          "default": true,
+          "description": "Readable view: expand single-line IF c THEN a; b ELSE d into IF c THEN { ... } ELSE { ... } blocks (exactly equivalent in ProvideX)."
+        },
+        "providex.readable.omitLet": {
+          "type": "boolean",
+          "default": true,
+          "description": "Readable view: hide the implied LET that ProvideX inserts on every assignment (it is re-inserted on compile)."
+        },
+        "providex.readable.spacing": {
+          "type": "boolean",
+          "default": true,
+          "description": "Readable view: spaces around operators and after commas."
+        },
+        "providex.readable.indent": {
+          "type": "boolean",
+          "default": true,
+          "description": "Readable view: indent block bodies."
+        },
+        "providex.format.spacing": {
+          "type": "boolean",
+          "default": true,
+          "description": "Format Document: normalize spacing around operators and after commas (ProvideX discards whitespace, so this never changes the compiled program)."
+        },
+        "providex.compiled.confirmSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask before the first save of a compiled program in a session (the original is always backed up to <file>.bak)."
+        }
+      }
+    },
+    "configurationDefaults": {
+      "[providex]": {
+        "files.encoding": "windows1252",
+        "editor.wordBasedSuggestions": "off",
+        "editor.semanticHighlighting.enabled": true
+      },
+      "[pxts]": {
+        "editor.semanticHighlighting.enabled": true,
+        "editor.wordBasedSuggestions": "off"
+      }
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "grammar": "node scripts/build-grammar.mjs",
+    "typecheck": "tsc -p . --noEmit",
+    "test": "vitest run",
+    "package": "npm run grammar && npm run build -- --production && vsce package --no-dependencies",
+    "vscode:prepublish": "npm run grammar && npm run build -- --production",
+    "extract": "node scripts/dump-raw.mjs raw && node scripts/build-lexicon.mjs raw && node scripts/build-grammar.mjs",
+    "test:corpus": "esbuild test/corpus-report.ts --bundle --platform=node --outfile=out/corpus-report.js && node out/corpus-report.js",
+    "test:vscode": "node scripts/build.mjs && esbuild test/vscode/suite.ts --bundle --platform=node --format=cjs --external:vscode --outfile=out/vscode/suite.js && esbuild test/vscode/runTest.ts --bundle --platform=node --format=cjs --outfile=out/vscode/runTest.js && node out/vscode/runTest.js",
+    "pretest": "node scripts/build.mjs",
+    "publish": "vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "~1.85.0",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.0.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.11",
+    "vscode-uri": "^3.0.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/da3dsoul/ProvideX-VSCode.git"
+  },
+  "homepage": "https://github.com/da3dsoul/ProvideX-VSCode#readme",
+  "bugs": {
+    "url": "https://github.com/da3dsoul/ProvideX-VSCode/issues"
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "*note": "Mnemonics are written in single quotes inside PRINT/INPUT lists, e.g. PRINT 'CS','BR',\"Hello\",'ER'. Many accept arguments: 'FONT'(\"Arial\",-10), 'COLOUR'(...). Graphics mnemonics (ARC, BOX, CIRCLE, LINE, PIE, POLYGON, RECTANGLE, FILL, PEN ...) draw on a graphical window or Windows printer channel.",
+  "ARC": {
+    "doc": "Draw an arc on a graphical window or Windows printer.",
+    "graphic": true,
+    "takesArgs": true,
+    "argFormUnconfirmed": true
+  },
+  "BACKGR": {
+    "doc": "Background: subsequent output is written to the background (non-highlighted) text layer / sets background attributes.",
+    "unverified": true
+  },
+  "BEEP": {
+    "doc": "Sound a beep; requires an argument in 9.62 (e.g. 'BEEP'(\"x\")) â€” for a plain bell use 'RB'.",
+    "takesArgs": true,
+    "example": "'BEEP'(\"x\")"
+  },
+  "BLACK": {
+    "doc": "Set the foreground (text) colour to black."
+  },
+  "BLUE": {
+    "doc": "Set the foreground (text) colour to blue."
+  },
+  "BOX": {
+    "doc": "Draw a box. Text form: 'BOX'(col,line,width,height[,title$]); also used on graphical channels.",
+    "takesArgs": true,
+    "example": "'BOX'(1,1,10,10)"
+  },
+  "BX": {
+    "doc": "Draw a box using box-drawing characters (short form of 'BOX').",
+    "unverified": true
+  },
+  "CAPTION": {
+    "doc": "Set the caption (title bar text) of the current window: 'CAPTION'(text$).",
+    "takesArgs": true,
+    "example": "'CAPTION'(\"x\")"
+  },
+  "CIRCLE": {
+    "doc": "Draw a circle/ellipse on a graphical window or Windows printer.",
+    "graphic": true,
+    "takesArgs": true,
+    "example": "'CIRCLE'(1,1,2)"
+  },
+  "COLOR": {
+    "doc": "Alias of 'COLOUR'.",
+    "takesArgs": true,
+    "example": "'COLOR'(\"RED\")"
+  },
+  "COLOUR": {
+    "doc": "Set foreground/background colours, e.g. 'COLOUR'(fg,bg) or by colour name/RGB string.",
+    "takesArgs": true,
+    "example": "'COLOUR'(\"RED\")"
+  },
+  "CPI": {
+    "doc": "Characters per inch for printer output: 'CPI'(n).",
+    "takesArgs": true,
+    "example": "'CPI'(10)"
+  },
+  "CURSOR": {
+    "doc": "Control the cursor shape/visibility, e.g. 'CURSOR'(\"ON\"), 'CURSOR'(\"OFF\"), 'CURSOR'(\"WAIT\").",
+    "takesArgs": true,
+    "example": "'CURSOR'(\"ON\")"
+  },
+  "CYAN": {
+    "doc": "Set the foreground (text) colour to cyan."
+  },
+  "DEFAULT": {
+    "doc": "Reset colours/attributes (and fonts) of the window to the defaults."
+  },
+  "DIALOGUE": {
+    "doc": "Display a window as a dialogue (modal style window).",
+    "unverified": true,
+    "takesArgs": true,
+    "example": "'DIALOGUE'(1,1,10,10,\"x\")"
+  },
+  "DROP": {
+    "doc": "Drop (close) the current or named window: 'DROP'(n) / 'DROP'(\"name\").",
+    "takesArgs": true,
+    "example": "'DROP'(1)"
+  },
+  "FILL": {
+    "doc": "Set the fill pattern/colour used by subsequent graphic shapes.",
+    "graphic": true,
+    "takesArgs": true,
+    "argFormUnconfirmed": true
+  },
+  "FLOOD": {
+    "doc": "Flood-fill an area on a graphical window.",
+    "graphic": true,
+    "takesArgs": true,
+    "example": "'FLOOD'(1,1)"
+  },
+  "FONT": {
+    "doc": "Select the font for subsequent text: 'FONT'(name$, size[, style$]).",
+    "takesArgs": true,
+    "example": "'FONT'(\"Arial\",-10)"
+  },
+  "FRAME": {
+    "doc": "Draw a frame / framed box on a window.",
+    "takesArgs": true,
+    "argFormUnconfirmed": true
+  },
+  "GOTO": {
+    "doc": "Position the graphics/print cursor: 'GOTO'(x,y).",
+    "graphic": true,
+    "takesArgs": true,
+    "argFormUnconfirmed": true
+  },
+  "GREEN": {
+    "doc": "Set the foreground (text) colour to green."
+  },
+  "IMAGE": {
+    "doc": "Display a bitmap/image: 'IMAGE'(col,line,width,height,file$).",
+    "graphic": true,
+    "takesArgs": true,
+    "argFormUnconfirmed": true
+  },
+  "LINE": {
+    "doc": "Draw a line: 'LINE'(x1,y1,x2,y2).",
+    "graphic": true,
+    "takesArgs": true,
+    "example": "'LINE'(1,1,2,2)"
+  },
+  "LPI": {
+    "doc": "Lines per inch for printer output: 'LPI'(n).",
+    "takesArgs": true,
+    "example": "'LPI'(6)"
+  },
+  "MAGENTA": {
+    "doc": "Set the foreground (text) colour to magenta."
+  },
+  "MAXSIZE": {
+    "doc": "Set the maximum size of the current (resizable) window.",
+    "takesArgs": true,
+    "example": "'MAXSIZE'(1,1)"
+  },
+  "MESSAGE": {
+    "doc": "Display a message on the message/status line of the window.",
+    "unverified": true,
+    "takesArgs": true,
+    "example": "'MESSAGE'(\"x\")"
+  },
+  "MINSIZE": {
+    "doc": "Set the minimum size of the current (resizable) window.",
+    "takesArgs": true,
+    "example": "'MINSIZE'(1,1)"
+  },
+  "MODE": {
+    "doc": "Set the drawing mode / pen mode used for graphics output.",
+    "graphic": true,
+    "unverified": true,
+    "takesArgs": true,
+    "example": "'MODE'(1)"
+  },
+  "MOVE": {
+    "doc": "Move the current window: 'MOVE'(col,line).",
+    "unverified": true,
+    "takesArgs": true,
+    "example": "'MOVE'(1,1)"
+  },
+  "OFFSET": {
+    "doc": "Set an offset (origin) for subsequent output, e.g. printer margins: 'OFFSET'(x,y).",
+    "unverified": true,
+    "takesArgs": true,
+    "example": "'OFFSET'(1,1)"
+  },
+  "OPTION": {
+    "doc": "Set window/printer options.",
+    "unverified": true,
+    "takesArgs": true,
+    "example": "'OPTION'(\"x\")"
+  },
+  "PEN": {
+    "doc": "Set the pen (line) colour, width and style for graphic shapes: 'PEN'(width,colour[,style]).",
+    "graphic": true,
+    "takesArgs": true,
+    "example": "'PEN'(1,1,1)"
+  },
+  "PICTURE": {
+    "doc": "Display a picture (bitmap) file in a region of the window: 'PICTURE'(col,line,width,height,file$[,mode]).",
+    "graphic": true,
+    "takesArgs": true,
+    "example": "'PICTURE'(1,1,10,10,\"a\")"
+  },
+  "PIE": {
+    "doc": "Draw a pie wedge.",
+    "graphic": true,
+    "takesArgs": true,
+    "argFormUnconfirmed": true
+  },
+  "POLYGON": {
+    "doc": "Draw a polygon from a list of points.",
+    "graphic": true,
+    "takesArgs": true,
+    "example": "'POLYGON'(1,1,2,2,3,3)"
+  },
+  "POP": {
+    "doc": "Pop (restore) the previously saved window, removing the current one."
+  },
+  "PUSH": {
+    "doc": "Push (save) the current window state so it can be restored by 'POP'."
+  },
+  "RECTANGLE": {
+    "doc": "Draw a rectangle: 'RECTANGLE'(x1,y1,x2,y2).",
+    "graphic": true,
+    "takesArgs": true,
+    "example": "'RECTANGLE'(1,1,2,2)"
+  },
+  "RED": {
+    "doc": "Set the foreground (text) colour to red."
+  },
+  "SCROLL": {
+    "doc": "Define a scrolling region within the window: 'SCROLL'(col,line,width,height).",
+    "takesArgs": true,
+    "example": "'SCROLL'(1,1,10,10)"
+  },
+  "SHOW": {
+    "doc": "Show / bring the window to the front (optionally a given state).",
+    "unverified": true,
+    "takesArgs": true,
+    "example": "'SHOW'(1)"
+  },
+  "SIZE": {
+    "doc": "Resize the current window: 'SIZE'(width,height).",
+    "takesArgs": true,
+    "example": "'SIZE'(1,1)"
+  },
+  "SWAP": {
+    "doc": "Swap to (activate) another window: 'SWAP'(n)."
+  },
+  "TEXT": {
+    "doc": "Output text at a graphic position: 'TEXT'(x,y,text$).",
+    "graphic": true,
+    "takesArgs": true,
+    "example": "'TEXT'(1,1,\"a\")"
+  },
+  "TEXTWDW": {
+    "doc": "Define a text window: 'TEXTWDW'(col,line,width,height). Alias 'WA'.",
+    "takesArgs": true,
+    "example": "'TEXTWDW'(1,1,10,10)"
+  },
+  "WA": {
+    "doc": "Alias of 'TEXTWDW' (define text window area)."
+  },
+  "WD": {
+    "doc": "Window define: create a window 'WD'(col,line,width,height[,title$])",
+    "unverified": true
+  },
+  "WG": {
+    "doc": "Window graphical: graphical window definition mnemonic.",
+    "unverified": true
+  },
+  "WHITE": {
+    "doc": "Set the foreground (text) colour to white."
+  },
+  "WINDOW": {
+    "doc": "Create a window: 'WINDOW'(col,line,width,height[,title$[,attr$]]).",
+    "takesArgs": true,
+    "example": "'WINDOW'(1,1,10,10,\"T\")"
+  },
+  "WRAP": {
+    "doc": "Control automatic line wrap at the right margin.",
+    "unverified": true,
+    "takesArgs": true,
+    "argFormUnconfirmed": true
+  },
+  "YELLOW": {
+    "doc": "Set the foreground (text) colour to yellow."
+  },
+  "_BLACK": {
+    "doc": "Set the background colour to black."
+  },
+  "_BLUE": {
+    "doc": "Set the background colour to blue."
+  },
+  "_COLOR": {
+    "doc": "Alias of '_COLOUR'.",
+    "takesArgs": true,
+    "example": "'_COLOR'(\"RED\")"
+  },
+  "_COLOUR": {
+    "doc": "Set the background colour.",
+    "takesArgs": true,
+    "example": "'_COLOUR'(\"RED\")"
+  },
+  "_CYAN": {
+    "doc": "Set the background colour to cyan."
+  },
+  "_GREEN": {
+    "doc": "Set the background colour to green."
+  },
+  "_MAGENTA": {
+    "doc": "Set the background colour to magenta."
+  },
+  "_RED": {
+    "doc": "Set the background colour to red."
+  },
+  "_WHITE": {
+    "doc": "Set the background colour to white."
+  },
+  "_YELLOW": {
+    "doc": "Set the background colour to yellow."
+  },
+  "CS": {
+    "doc": "Clear screen (the current window) and home the cursor."
+  },
+  "CE": {
+    "doc": "Clear from cursor to end of screen (window)."
+  },
+  "CL": {
+    "doc": "Clear from cursor to end of line."
+  },
+  "CH": {
+    "doc": "Cursor home (top-left of the window)."
+  },
+  "BR": {
+    "doc": "Begin reverse video."
+  },
+  "ER": {
+    "doc": "End reverse video."
+  },
+  "BB": {
+    "doc": "Begin blink."
+  },
+  "EB": {
+    "doc": "End blink."
+  },
+  "BU": {
+    "doc": "Begin underline."
+  },
+  "EU": {
+    "doc": "End underline."
+  },
+  "SB": {
+    "doc": "Set background: subsequent output is background (protected/normal) text."
+  },
+  "SF": {
+    "doc": "Set foreground: subsequent output is foreground (unprotected/data) text."
+  },
+  "RB": {
+    "doc": "Ring bell."
+  },
+  "LF": {
+    "doc": "Line feed."
+  },
+  "FF": {
+    "doc": "Form feed (new page on printers; clears the window on terminals)."
+  },
+  "CR": {
+    "doc": "Carriage return."
+  },
+  "BT": {
+    "doc": "Back tab."
+  },
+  "BS": {
+    "doc": "Backspace (cursor left one position)."
+  },
+  "LD": {
+    "doc": "Line delete: delete the current line, scrolling lines below up."
+  },
+  "LI": {
+    "doc": "Line insert: insert a blank line at the cursor, scrolling lines below down."
+  },
+  "BG": {
+    "doc": "Begin graphics character set (box-drawing characters).",
+    "unverified": true
+  },
+  "EG": {
+    "doc": "End graphics character set.",
+    "unverified": true
+  }
+}

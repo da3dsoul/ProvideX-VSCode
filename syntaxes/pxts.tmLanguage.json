@@ -1,0 +1,626 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ProvideX/TS",
+  "scopeName": "source.pxts",
+  "fileTypes": [
+    "pxts"
+  ],
+  "patterns": [
+    {
+      "include": "#statement"
+    }
+  ],
+  "repository": {
+    "statement": {
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#raw"
+        },
+        {
+          "include": "#mnemonic-tag"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#single-string"
+        },
+        {
+          "include": "#decorator"
+        },
+        {
+          "include": "#function-decl"
+        },
+        {
+          "include": "#class-decl"
+        },
+        {
+          "include": "#label"
+        },
+        {
+          "include": "#member"
+        },
+        {
+          "include": "#special"
+        },
+        {
+          "include": "#accessor"
+        },
+        {
+          "include": "#new"
+        },
+        {
+          "include": "#extends"
+        },
+        {
+          "include": "#keyword"
+        },
+        {
+          "include": "#decl"
+        },
+        {
+          "include": "#this"
+        },
+        {
+          "include": "#builtin"
+        },
+        {
+          "include": "#call"
+        },
+        {
+          "include": "#sysvar"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#global-variable"
+        },
+        {
+          "include": "#string-variable"
+        },
+        {
+          "include": "#variable"
+        },
+        {
+          "include": "#operator"
+        },
+        {
+          "include": "#punctuation"
+        }
+      ]
+    },
+    "comment": {
+      "match": "//.*$",
+      "name": "comment.line.double-slash.pxts"
+    },
+    "raw": {
+      "patterns": [
+        {
+          "match": "(pvx)(`)([^`]*)(`)",
+          "captures": {
+            "1": {
+              "name": "support.function.raw.pxts"
+            },
+            "2": {
+              "name": "punctuation.definition.raw.pxts"
+            },
+            "3": {
+              "name": "meta.embedded.providex",
+              "patterns": [
+                {
+                  "include": "#pvx_statement"
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.definition.raw.pxts"
+            }
+          }
+        },
+        {
+          "match": "(pvx)(`)(.*)$",
+          "captures": {
+            "1": {
+              "name": "support.function.raw.pxts"
+            },
+            "2": {
+              "name": "punctuation.definition.raw.pxts"
+            },
+            "3": {
+              "name": "meta.embedded.providex",
+              "patterns": [
+                {
+                  "include": "#pvx_statement"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "string": {
+      "begin": "\"",
+      "end": "\"|$",
+      "name": "string.quoted.double.pxts",
+      "patterns": [
+        {
+          "match": "\\\\(x[0-9A-Fa-f]{2}|.)",
+          "name": "constant.character.escape.pxts"
+        }
+      ]
+    },
+    "function-decl": {
+      "match": "\\b(function|def)\\s+([A-Za-z_%][A-Za-z0-9_]*[$%]?)",
+      "captures": {
+        "1": {
+          "name": "storage.type.function.pxts"
+        },
+        "2": {
+          "name": "entity.name.function.pxts"
+        }
+      }
+    },
+    "class-decl": {
+      "match": "\\b(class)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+      "captures": {
+        "1": {
+          "name": "storage.type.class.pxts"
+        },
+        "2": {
+          "name": "entity.name.type.class.pxts"
+        }
+      }
+    },
+    "label": {
+      "match": "^\\s*([A-Za-z_][A-Za-z0-9_]*)(:)(?!:)\\s*(//.*)?$",
+      "captures": {
+        "1": {
+          "name": "entity.name.label.pxts"
+        },
+        "3": {
+          "name": "comment.line.double-slash.pxts"
+        }
+      }
+    },
+    "member": {
+      "patterns": [
+        {
+          "match": "(?<=[A-Za-z0-9_$%)\\]])\\.([A-Za-z_][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*[$%]?)(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.member.pxts"
+            }
+          }
+        },
+        {
+          "match": "(?<=[A-Za-z0-9_$%)\\]])\\.([A-Za-z_][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*[$%]?)",
+          "captures": {
+            "1": {
+              "name": "variable.other.property.pxts"
+            }
+          }
+        }
+      ]
+    },
+    "special": {
+      "match": "(?i)\\*(NEXT|SAME|RETRY|BREAK|CONTINUE|PROCEED|RETURN|END|ESCAPE)\\b",
+      "name": "constant.language.special-target.pxts"
+    },
+    "accessor": {
+      "match": "\\b(get|set)\\s+(?=[A-Za-z_][A-Za-z0-9_]*[$%]?\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "storage.type.accessor.pxts"
+        }
+      }
+    },
+    "new": {
+      "patterns": [
+        {
+          "match": "\\b(new)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.new.pxts"
+            },
+            "2": {
+              "name": "entity.name.type.class.pxts"
+            }
+          }
+        },
+        {
+          "match": "\\bnew(?=\\s*\\()",
+          "name": "support.function.builtin.pxts"
+        }
+      ]
+    },
+    "extends": {
+      "begin": "\\b(extends)\\b",
+      "end": "(?=\\{)|$",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.modifier.extends.pxts"
+        }
+      },
+      "patterns": [
+        {
+          "match": "[A-Za-z_][A-Za-z0-9_]*",
+          "name": "entity.other.inherited-class.pxts"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.pxts"
+        }
+      ]
+    },
+    "keyword": {
+      "match": "\\b(continue|default|finally|exitto|repeat|return|select|switch|begin|break|catch|gosub|until|where|while|case|else|from|goto|step|end|for|try|if|to)\\b(?![$%])",
+      "name": "keyword.control.pxts"
+    },
+    "decl": {
+      "match": "\\b(constructor|destructor|function|property|readonly|extends|private|method|public|class|const|local|like|def|let)\\b(?![$%])",
+      "name": "storage.type.pxts"
+    },
+    "this": {
+      "match": "\\b(this|global)\\b",
+      "name": "variable.language.this.pxts"
+    },
+    "decorator": {
+      "match": "(@)([A-Za-z_][A-Za-z0-9_]*)",
+      "captures": {
+        "1": {
+          "name": "punctuation.decorator.pxts"
+        },
+        "2": {
+          "name": "entity.name.function.decorator.pxts"
+        }
+      }
+    },
+    "mnemonic-tag": {
+      "match": "\\b(m)(`)([^`]*)(`)",
+      "captures": {
+        "1": {
+          "name": "support.function.mnemonic.pxts"
+        },
+        "3": {
+          "name": "constant.other.mnemonic.pxts"
+        }
+      }
+    },
+    "single-string": {
+      "begin": "'",
+      "end": "'|$",
+      "name": "string.quoted.single.pxts",
+      "patterns": [
+        {
+          "match": "\\\\(x[0-9A-Fa-f]{2}|.)",
+          "name": "constant.character.escape.pxts"
+        }
+      ]
+    },
+    "builtin": {
+      "match": "(?i)\\b(SCALL|ABS|ACS|AND|ARG|ASC|ASN|ATH|ATN|BIN|BSZ|CHG|CHR|CMP|COS|CPL|CRC|CSE|CTL|CVS|DEC|DIM|DIR|DLL|DLX|DSK|DTE|ENV|EPT|ERR|EVN|EVS|EXP|FFN|FIB|FID|FIN|FPT|GAP|GBL|GEP|HSA|HSH|HTA|HWN|I3E|I86|IND|INT|IOL|IOR|JST|JUL|KEC|KEF|KEL|KEN|KEP|KEY|KGN|LCS|LEN|LNO|LOG|LRC|LST|MAX|MEM|MID|MIN|MNM|MOD|MSG|MSK|MXC|MXL|NEW|NOT|NUL|NUM|OBJ|OPT|PAD|PCK|PFX|PGM|POS|PRC|PRM|PTH|PUB|RCD|RDX|REC|REF|RND|RNO|SEP|SGN|SIN|SQR|SRT|SSZ|STK|STP|STR|SUB|SWP|SYS|TAN|TBL|TCB|TMR|TRX|TSK|TXH|TXW|UCP|UCS|UPK|VAL|VIN|VIS|XEQ|XFA|XOR)(?=\\s*\\()",
+      "name": "support.function.builtin.pxts"
+    },
+    "call": {
+      "match": "\\b([A-Za-z_][A-Za-z0-9_]*[$%]?)(?=\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.pxts"
+        }
+      }
+    },
+    "sysvar": {
+      "match": "\\b(_OBJ|BKG|CHN|CTL|DAY|DLM|DSZ|EOM|ERR|ERS|ESC|GFN|GID|HFN|HLP|HWD|LFA|LFO|LIP|LPG|LWD|MDE|MSE|MSL|NAR|NID|OBJ|PFX|PGN|PRC|PRM|PSZ|QUO|RET|RND|SEP|SID|SSN|SYS|TIM|TME|TMS|TSM|UID|UNT|WHO|FN)\\b(?![$%(])",
+      "name": "variable.language.system.pxts"
+    },
+    "number": {
+      "match": "(?<![A-Za-z_$%])(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?",
+      "name": "constant.numeric.pxts"
+    },
+    "global-variable": {
+      "match": "%[A-Za-z_][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*[$%]?",
+      "name": "variable.other.global.pxts"
+    },
+    "string-variable": {
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*\\$",
+      "name": "variable.other.string.pxts"
+    },
+    "variable": {
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*%?",
+      "name": "variable.other.pxts"
+    },
+    "operator": {
+      "match": "===|!==|==|!=|<=|>=|&&|\\|\\||\\*\\*|\\+=|-=|\\*=|/=|\\+\\+|--|=>|[-+*/<>=!@]",
+      "name": "keyword.operator.pxts"
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "match": ";",
+          "name": "punctuation.terminator.statement.pxts"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.pxts"
+        },
+        {
+          "match": "[{}]",
+          "name": "punctuation.section.block.pxts"
+        },
+        {
+          "match": "[()\\[\\]]",
+          "name": "punctuation.section.brackets.pxts"
+        }
+      ]
+    },
+    "pvx_line-start": {
+      "patterns": [
+        {
+          "match": "^(\\s*)(\\d+)(\\??)(?=\\s|$)(?:(\\s+)([A-Za-z_][A-Za-z0-9_.]*)(:)(?!=))?",
+          "captures": {
+            "2": {
+              "name": "constant.numeric.line-number.providex"
+            },
+            "3": {
+              "name": "invalid.illegal.syntax-error.providex"
+            },
+            "5": {
+              "name": "entity.name.label.providex"
+            },
+            "6": {
+              "name": "punctuation.separator.label.providex"
+            }
+          }
+        },
+        {
+          "match": "^(\\s*)([A-Za-z_][A-Za-z0-9_.]*)(:)(?!=)",
+          "captures": {
+            "2": {
+              "name": "entity.name.label.providex"
+            },
+            "3": {
+              "name": "punctuation.separator.label.providex"
+            }
+          }
+        }
+      ]
+    },
+    "pvx_statement": {
+      "patterns": [
+        {
+          "include": "#pvx_comment"
+        },
+        {
+          "include": "#pvx_string"
+        },
+        {
+          "include": "#pvx_hex-string"
+        },
+        {
+          "include": "#pvx_rem"
+        },
+        {
+          "include": "#pvx_mnemonic"
+        },
+        {
+          "include": "#pvx_member"
+        },
+        {
+          "include": "#pvx_special"
+        },
+        {
+          "include": "#pvx_option"
+        },
+        {
+          "include": "#pvx_def-fn"
+        },
+        {
+          "include": "#pvx_user-function"
+        },
+        {
+          "include": "#pvx_function"
+        },
+        {
+          "include": "#pvx_control"
+        },
+        {
+          "include": "#pvx_oop"
+        },
+        {
+          "include": "#pvx_operator-word"
+        },
+        {
+          "include": "#pvx_directive"
+        },
+        {
+          "include": "#pvx_sysvar"
+        },
+        {
+          "include": "#pvx_branch-target"
+        },
+        {
+          "include": "#pvx_number"
+        },
+        {
+          "include": "#pvx_global-variable"
+        },
+        {
+          "include": "#pvx_string-variable"
+        },
+        {
+          "include": "#pvx_variable"
+        },
+        {
+          "include": "#pvx_operator"
+        },
+        {
+          "include": "#pvx_punctuation"
+        }
+      ]
+    },
+    "pvx_comment": {
+      "match": "!.*$",
+      "name": "comment.line.exclamation.providex"
+    },
+    "pvx_rem": {
+      "match": "(?i)(?<![A-Za-z0-9_$%.'])(REM)(?![A-Za-z0-9_$%.])(.*)$",
+      "captures": {
+        "1": {
+          "name": "keyword.other.rem.providex"
+        },
+        "2": {
+          "name": "comment.line.rem.providex"
+        }
+      }
+    },
+    "pvx_string": {
+      "begin": "\"",
+      "end": "\"(?!\")|$",
+      "name": "string.quoted.double.providex",
+      "patterns": [
+        {
+          "match": "\"\"",
+          "name": "constant.character.escape.providex"
+        }
+      ]
+    },
+    "pvx_hex-string": {
+      "match": "\\$[0-9A-Fa-f]*\\$",
+      "name": "constant.other.hex-string.providex"
+    },
+    "pvx_mnemonic": {
+      "match": "(?<![A-Za-z0-9_$%)\\]])'[^'\"\\s=,;()]{0,12}'",
+      "name": "constant.other.mnemonic.providex"
+    },
+    "pvx_member": {
+      "patterns": [
+        {
+          "match": "(?<=[A-Za-z0-9_$%)\\]])'([A-Za-z_][A-Za-z0-9_.]*[$%]?)(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.member.providex"
+            }
+          }
+        },
+        {
+          "match": "(?<=[A-Za-z0-9_$%)\\]])'([A-Za-z_][A-Za-z0-9_.]*[$%]?)",
+          "captures": {
+            "1": {
+              "name": "variable.other.property.providex"
+            }
+          }
+        }
+      ]
+    },
+    "pvx_special": {
+      "match": "(?i)\\*(NEXT|SAME|RETRY|BREAK|CONTINUE|PROCEED|RETURN|END|ESCAPE|ALL)\\b",
+      "name": "constant.language.special-target.providex"
+    },
+    "pvx_option": {
+      "match": "(?i)(?<=[,(])\\s*(BSY|BSZ|DIR|DOM|END|ERR|FLG|FMT|FNT|HLP|IND|IOL|ISZ|KEY|KNO|LEN|MNU|MSG|NBF|NUL|OPT|OWN|REC|RNO|RSZ|RTY|SEP|SIZ|TBL|TIM|TIP)\\s*(?==)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.option.providex"
+        }
+      }
+    },
+    "pvx_def-fn": {
+      "match": "(?i)\\b(DEF)\\s+(FN%?[A-Za-z_][A-Za-z0-9_.]*[$%]?)",
+      "captures": {
+        "1": {
+          "name": "storage.type.function.providex"
+        },
+        "2": {
+          "name": "entity.name.function.providex"
+        }
+      }
+    },
+    "pvx_user-function": {
+      "match": "(?i)\\bFN%?[A-Za-z_][A-Za-z0-9_.]*[$%]?(?=\\s*\\()",
+      "name": "entity.name.function.user.providex"
+    },
+    "pvx_function": {
+      "match": "(?i)\\b(SCALL|ABS|ACS|AND|ARG|ASC|ASN|ATH|ATN|BIN|BSZ|CHG|CHR|CMP|COS|CPL|CRC|CSE|CTL|CVS|DEC|DIM|DIR|DLL|DLX|DSK|DTE|ENV|EPT|ERR|EVN|EVS|EXP|FFN|FIB|FID|FIN|FPT|GAP|GBL|GEP|HSA|HSH|HTA|HWN|I3E|I86|IND|INT|IOL|IOR|JST|JUL|KEC|KEF|KEL|KEN|KEP|KEY|KGN|LCS|LEN|LNO|LOG|LRC|LST|MAX|MEM|MID|MIN|MNM|MOD|MSG|MSK|MXC|MXL|NEW|NOT|NUL|NUM|OBJ|OPT|PAD|PCK|PFX|PGM|POS|PRC|PRM|PTH|PUB|RCD|RDX|REC|REF|RND|RNO|SEP|SGN|SIN|SQR|SRT|SSZ|STK|STP|STR|SUB|SWP|SYS|TAN|TBL|TCB|TMR|TRX|TSK|TXH|TXW|UCP|UCS|UPK|VAL|VIN|VIS|XEQ|XFA|XOR)(?=\\s*\\()",
+      "name": "support.function.builtin.providex"
+    },
+    "pvx_control": {
+      "match": "(?i)\\b(CONTINUE|DEFAULT|END_TRY|EXECUTE|FINALLY|PERFORM|PROCESS|END_IF|ESCAPE|EXITTO|REPEAT|RETURN|SETERR|SETESC|SWITCH|BREAK|CATCH|ENTER|GOSUB|RETRY|UNTIL|WHILE|CALL|CASE|ELSE|EXIT|GOTO|NEXT|QUIT|STEP|STOP|THEN|WAIT|WEND|BYE|END|FOR|RUN|TRY|FI|IF|ON|TO)(?![A-Za-z0-9_$%.])",
+      "name": "keyword.control.providex"
+    },
+    "pvx_oop": {
+      "match": "(?i)\\b(FUNCTION|PROPERTY|REQUIRED|PROGRAM|CREATE|ENDDEF|OBJECT|STATIC|CLASS|LOCAL|DROP|LIKE|DEF|GET|SET)(?![A-Za-z0-9_$%.])",
+      "name": "storage.type.providex"
+    },
+    "pvx_operator-word": {
+      "match": "(?i)\\b(AND|NOT|OR)(?![A-Za-z0-9_$%.])",
+      "name": "keyword.operator.logical.providex"
+    },
+    "pvx_directive": {
+      "match": "(?i)\\b(ERROR_HANDLER|FLOATINGPOINT|SECURITY_MASK|VIDEO_PALETTE|GET_FILE_BOX|RADIO_BUTTON|TRISTATE_BOX|WINPRT_SETUP|H_SCROLLBAR|LINE_SWITCH|MESSAGE_LIB|MULTI_MEDIA|SYSTEM_HELP|SYSTEM_JRNL|V_SCROLLBAR|VARDROP_BOX|VARLIST_BOX|CLIP_BOARD|CUSTOM_VBX|DAY_FORMAT|DICTIONARY|MULTI_LINE|POPUP_MENU|PROPERTIES|SHORT_FORM|AUTO_LOCK|CHECK_BOX|DIRECTORY|LONG_FORM|PRECISION|RANDOMIZE|SET_FOCUS|SET_PARAM|TRANSLATE|DROP_BOX|ENDTRACE|LIST_BOX|MENU_BAR|MNEMONIC|PASSWORD|PREINPUT|READDATA|RENUMBER|SETDRIVE|SETMOUSE|SETTRACE|USER_LEX|CONTROL|DISABLE|EXTRACT|INDEXED|PROCEED|RELEASE|RESTORE|SET_NBF|SETTIME|ACCEPT|BUTTON|DEFCTL|DEFPRT|DEFTTY|DELETE|DIRECT|ENABLE|EXCEPT|INSERT|INVOKE|IOLIST|MSGBOX|OBTAIN|PREFIX|RANDOM|RECORD|REFILE|REMOVE|RENAME|SELECT|SERIAL|SERVER|SETCTL|SETDAY|SETDEV|SETFID|UNIQUE|UNLOCK|UPDATE|WINDOW|BEGIN|CHART|CLEAR|CLOSE|CWDIR|ERASE|EVENT|INDEX|INPUT|KEYED|MERGE|PRINT|PURGE|REDIM|RESET|ROUND|START|TABLE|WHERE|WRITE|ADDR|AUTO|DATA|DUMP|EDIT|FILE|FIND|FROM|GRID|HIDE|LIST|LOAD|LOCK|OPEN|READ|SAME|SAVE|SHOW|SORT|SWAP|WITH|ADD|DIM|KEY|LET|OFF|POP|REM|VIA)(?![A-Za-z0-9_$%.])",
+      "name": "keyword.other.directive.providex"
+    },
+    "pvx_sysvar": {
+      "match": "(?i)\\b(_PARENT|_OBJ|BKG|CHN|CTL|DAY|DLM|DSZ|EOM|ERR|ERS|ESC|GFN|GID|HFN|HLP|HWD|LFA|LFO|LIP|LPG|LWD|MDE|MSE|MSL|NAR|NID|OBJ|PFX|PGN|PRC|PRM|PSZ|QUO|RET|RND|SEP|SID|SSN|SYS|TIM|TME|TMS|TSM|UID|UNT|WHO|FN)(?![A-Za-z0-9_$%.])(?!\\s*\\()",
+      "name": "variable.language.system.providex"
+    },
+    "pvx_branch-target": {
+      "match": "(?i)(?<=\\b(?:GOTO|GOSUB|EXITTO|SETERR|SETESC)\\s)\\s*([A-Za-z_][A-Za-z0-9_.]*)(?![$%])",
+      "captures": {
+        "1": {
+          "name": "entity.name.label.reference.providex"
+        }
+      }
+    },
+    "pvx_number": {
+      "match": "(?<![A-Za-z_$%])(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?",
+      "name": "constant.numeric.providex"
+    },
+    "pvx_global-variable": {
+      "match": "%[A-Za-z_][A-Za-z0-9_.]*[$%]?",
+      "name": "variable.other.global.providex"
+    },
+    "pvx_string-variable": {
+      "match": "\\b[A-Za-z_][A-Za-z0-9_.]*\\$",
+      "name": "variable.other.string.providex"
+    },
+    "pvx_variable": {
+      "match": "\\b[A-Za-z_][A-Za-z0-9_.]*%?",
+      "name": "variable.other.providex"
+    },
+    "pvx_operator": {
+      "match": "\\*\\*|<=|>=|<>|=<|=>|><|\\+=|-=|\\*=|/=|\\^=|\\+\\+|--|[-+*/^=<>|&@?]",
+      "name": "keyword.operator.providex"
+    },
+    "pvx_punctuation": {
+      "patterns": [
+        {
+          "match": ";",
+          "name": "punctuation.terminator.statement.providex"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.providex"
+        },
+        {
+          "match": "[{}]",
+          "name": "punctuation.section.block.providex"
+        },
+        {
+          "match": "[()\\[\\]]",
+          "name": "punctuation.section.brackets.providex"
+        },
+        {
+          "match": ":",
+          "name": "punctuation.separator.colon.providex"
+        }
+      ]
+    }
+  }
+}

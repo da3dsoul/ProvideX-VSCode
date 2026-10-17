@@ -1,0 +1,1614 @@
+{
+  "ACCEPT": {
+    "category": "io",
+    "syntax": [
+      "ACCEPT (chan[,fileopt...]) var[,...]"
+    ],
+    "doc": "Wait for and accept a single keystroke/character from the channel without echo or requiring Enter, storing it in the variable(s)."
+  },
+  "ADD": {
+    "category": "file",
+    "syntax": [
+      "ADD string$"
+    ],
+    "doc": "ADD directive taking a string argument (e.g. adding a name to a list/library). Semantics not confirmed.",
+    "unverified": true
+  },
+  "ADDR": {
+    "category": "program",
+    "syntax": [
+      "ADDR program$[,ERR=stmtref]"
+    ],
+    "doc": "Add a program to resident memory so subsequent CALL/PERFORM/RUN of it do not reload it from disk. Use DROP to remove it."
+  },
+  "AND": {
+    "category": "control",
+    "syntax": [
+      "expr AND expr"
+    ],
+    "doc": "Logical AND operator: true (1) when both operands are non-zero. Used in IF, WHILE, UNTIL and other conditions."
+  },
+  "AUTO": {
+    "category": "program",
+    "syntax": [
+      "AUTO [start[,increment]]"
+    ],
+    "doc": "Command-mode directive: turn on automatic line numbering for entering program statements."
+  },
+  "AUTO_LOCK": {
+    "category": "file",
+    "syntax": [
+      "AUTO_LOCK ON",
+      "AUTO_LOCK OFF"
+    ],
+    "doc": "Turn automatic record locking on or off.",
+    "unverified": true
+  },
+  "BEGIN": {
+    "category": "file",
+    "syntax": [
+      "BEGIN"
+    ],
+    "doc": "Close all open files (except channel 0) and reset the program state. Also used as a clause in SELECT ... BEGIN key$ to give the starting key of the selection."
+  },
+  "BREAK": {
+    "category": "control",
+    "syntax": [
+      "BREAK"
+    ],
+    "doc": "Exit the innermost FOR/NEXT, WHILE/WEND, REPEAT/UNTIL or SELECT/NEXT RECORD loop and continue after its end."
+  },
+  "BUTTON": {
+    "category": "gui",
+    "syntax": [
+      "BUTTON ctl_id,@(col,line,width,height)=text$[,ctlopt...]",
+      "BUTTON REMOVE ctl_id"
+    ],
+    "doc": "Create, delete or manipulate a push-button GUI control. Pressing the button generates the CTL value ctl_id."
+  },
+  "CALL": {
+    "category": "program",
+    "syntax": [
+      "CALL program$[,ERR=stmtref][,arg...]",
+      "CALL \"prog;entry\"[,arg...]"
+    ],
+    "doc": "Call an external program (or entry point label via \"prog;label\") as a subroutine, passing arguments by reference. The called program receives them with ENTER and returns with EXIT."
+  },
+  "CASE": {
+    "category": "control",
+    "syntax": [
+      "CASE value[,value...]"
+    ],
+    "doc": "Introduces a branch inside SWITCH ... END SWITCH; executed when the SWITCH expression matches one of the values.",
+    "block": "middle"
+  },
+  "CATCH": {
+    "category": "control",
+    "syntax": [
+      "CATCH"
+    ],
+    "doc": "Starts the error-handling section of a TRY ... CATCH ... END_TRY block; executed when an error occurs in the TRY section.",
+    "block": "middle"
+  },
+  "CHART": {
+    "category": "gui",
+    "syntax": [
+      "CHART ctl_id,@(col,line,width,height)",
+      "CHART REMOVE ctl_id"
+    ],
+    "doc": "Create, remove or manipulate a chart (graph) GUI control."
+  },
+  "CHECK_BOX": {
+    "category": "gui",
+    "syntax": [
+      "CHECK_BOX ctl_id,@(col,line,width,height)=text$[,ctlopt...]",
+      "CHECK_BOX {READ|WRITE|...} ctl_id,var"
+    ],
+    "doc": "Create, read, write or manipulate a check box GUI control."
+  },
+  "CLASS": {
+    "category": "oop",
+    "syntax": [
+      "DEF CLASS \"name\"[ CREATE REQUIRED][ DELETE REQUIRED]"
+    ],
+    "doc": "Keyword of DEF CLASS used to define an object class in an OOP program."
+  },
+  "CLEAR": {
+    "category": "declaration",
+    "syntax": [
+      "CLEAR [var[,...]]"
+    ],
+    "doc": "Clear (reset) variables: with no list all local variables are cleared; with a list only those variables are reset to 0/null."
+  },
+  "CLIP_BOARD": {
+    "category": "gui",
+    "syntax": [
+      "CLIP_BOARD READ var$",
+      "CLIP_BOARD WRITE expr$"
+    ],
+    "doc": "Read from or write to the Windows clipboard."
+  },
+  "CLOSE": {
+    "category": "file",
+    "syntax": [
+      "CLOSE (chan[,ERR=stmtref])[,(chan)...]",
+      "CLOSE"
+    ],
+    "doc": "Close one or more channels (files/devices). CLOSE with no channel closes all channels opened by the program (except 0)."
+  },
+  "CONTINUE": {
+    "category": "control",
+    "syntax": [
+      "CONTINUE"
+    ],
+    "doc": "Skip the rest of the current loop iteration and continue with the next iteration of the innermost loop."
+  },
+  "CONTROL": {
+    "category": "gui",
+    "syntax": [
+      "ENABLE CONTROL id",
+      "DISABLE CONTROL id",
+      "HIDE CONTROL id",
+      "SHOW CONTROL id"
+    ],
+    "doc": "Keyword used after ENABLE/DISABLE/HIDE/SHOW etc. to refer to a GUI control."
+  },
+  "CREATE": {
+    "category": "oop",
+    "syntax": [
+      "DEF CLASS \"name\" CREATE REQUIRED",
+      "CREATE a$,b$"
+    ],
+    "doc": "Keyword: in DEF CLASS, CREATE REQUIRED requires the class to define an ON_CREATE constructor. Also a directive taking two strings (semantics not confirmed)."
+  },
+  "CUSTOM_VBX": {
+    "category": "gui",
+    "syntax": [
+      "CUSTOM_VBX REMOVE ctl_id",
+      "CUSTOM_VBX ..."
+    ],
+    "doc": "Create or remove a custom (VBX/OCX-style) GUI control. Only the REMOVE form was confirmed by the 9.62 checker.",
+    "unverified": true
+  },
+  "CWDIR": {
+    "category": "system",
+    "syntax": [
+      "CWDIR dir$[,ERR=stmtref]"
+    ],
+    "doc": "Change the current working directory (see LWD for the current directory)."
+  },
+  "DATA": {
+    "category": "declaration",
+    "syntax": [
+      "DATA expr[,expr...]"
+    ],
+    "doc": "Define constants to be read with READ DATA; use RESTORE to reposition the data pointer."
+  },
+  "DAY_FORMAT": {
+    "category": "system",
+    "syntax": [
+      "DAY_FORMAT fmt$"
+    ],
+    "doc": "Set the date format used by the DAY system variable (e.g. \"MM/DD/YY\")."
+  },
+  "DEF": {
+    "category": "declaration",
+    "syntax": [
+      "DEF FNname[$](param,...)=expr",
+      "DEF FNname[$](param,...)",
+      "DEF CLASS \"name\"",
+      "DEF OBJECT var,progid$"
+    ],
+    "doc": "Define a user function (DEF FN, single- or multi-line ending with END DEF), a class (DEF CLASS), or a COM/ActiveX object (DEF OBJECT)."
+  },
+  "DEFAULT": {
+    "category": "control",
+    "syntax": [
+      "DEFAULT"
+    ],
+    "doc": "Introduces the branch inside SWITCH ... END SWITCH executed when no CASE matches.",
+    "block": "middle"
+  },
+  "DEFCTL": {
+    "category": "system",
+    "syntax": [
+      "DEFCTL ..."
+    ],
+    "doc": "Define control-key (CTL) assignments. Syntax not confirmed by the 9.62 checker.",
+    "unverified": true
+  },
+  "DEFPRT": {
+    "category": "system",
+    "syntax": [
+      "DEFPRT n,n"
+    ],
+    "doc": "Define printer characteristics. Takes numeric arguments; semantics not confirmed.",
+    "unverified": true
+  },
+  "DEFTTY": {
+    "category": "system",
+    "syntax": [
+      "DEFTTY n,n"
+    ],
+    "doc": "Define terminal characteristics. Takes numeric arguments; semantics not confirmed.",
+    "unverified": true
+  },
+  "DELETE": {
+    "category": "program",
+    "syntax": [
+      "DELETE [from][,to]",
+      "DELETE OBJECT handle"
+    ],
+    "doc": "Delete program lines (command mode). DELETE OBJECT destroys an object instance created with NEW()."
+  },
+  "DICTIONARY": {
+    "category": "file",
+    "syntax": [
+      "... DICTIONARY ..."
+    ],
+    "doc": "Keyword used with embedded data dictionary operations (e.g. reading/writing a file's dictionary).",
+    "unverified": true
+  },
+  "DIM": {
+    "category": "declaration",
+    "syntax": [
+      "DIM arr[n[,m[,p]]]",
+      "DIM arr$[n]",
+      "DIM var$(length[,fill$])"
+    ],
+    "doc": "Dimension arrays with square brackets (numeric or string, up to 3 dimensions, e.g. DIM A$[10]) or, with parentheses, initialise a string variable to the given length (filled with spaces or fill$)."
+  },
+  "DIRECT": {
+    "category": "file",
+    "syntax": [
+      "DIRECT name$,keylen,records,reclen[,ERR=stmtref]"
+    ],
+    "doc": "Create a DIRECT (single-keyed, hashed) data file."
+  },
+  "DIRECTORY": {
+    "category": "file",
+    "syntax": [
+      "DIRECTORY name$[,ERR=stmtref]"
+    ],
+    "doc": "Create a new operating-system directory."
+  },
+  "DISABLE": {
+    "category": "gui",
+    "syntax": [
+      "DISABLE CONTROL ctl_id",
+      "DISABLE ..."
+    ],
+    "doc": "Disable (grey out) a GUI control or object so it cannot be used."
+  },
+  "DROP": {
+    "category": "program",
+    "syntax": [
+      "DROP program$[,ERR=stmtref]",
+      "DROP OBJECT handle"
+    ],
+    "doc": "Remove a resident program (added by ADDR) from memory, or drop an object reference."
+  },
+  "DROP_BOX": {
+    "category": "gui",
+    "syntax": [
+      "DROP_BOX ctl_id,@(col,line,width,height)[,ctlopt...]",
+      "DROP_BOX {LOAD|READ|WRITE|...} ctl_id..."
+    ],
+    "doc": "Create or manipulate a drop-down list box GUI control."
+  },
+  "DUMP": {
+    "category": "debug",
+    "syntax": [
+      "DUMP [(chan)]"
+    ],
+    "doc": "List all variables and their current values (to the terminal or the given channel); useful for debugging."
+  },
+  "EDIT": {
+    "category": "program",
+    "syntax": [
+      "EDIT [line]"
+    ],
+    "doc": "Command-mode directive: edit a program statement. ` (backquote) is an alias."
+  },
+  "ELSE": {
+    "category": "control",
+    "syntax": [
+      "IF cond THEN stmts ELSE stmts",
+      "} ELSE {"
+    ],
+    "doc": "Introduces the statements of an IF that execute when the condition is false."
+  },
+  "ENABLE": {
+    "category": "gui",
+    "syntax": [
+      "ENABLE CONTROL ctl_id",
+      "ENABLE ..."
+    ],
+    "doc": "Enable a GUI control or object previously disabled."
+  },
+  "END": {
+    "category": "control",
+    "syntax": [
+      "END",
+      "END DEF",
+      "END SWITCH",
+      "END IF"
+    ],
+    "doc": "End program execution (closing files opened by the program). Also closes block structures: END DEF, END SWITCH; as a SELECT clause, END key$ gives the ending key."
+  },
+  "END SWITCH": {
+    "category": "control",
+    "syntax": [
+      "END SWITCH"
+    ],
+    "doc": "Terminates a SWITCH ... CASE ... END SWITCH block.",
+    "block": "close"
+  },
+  "ENDDEF": {
+    "category": "declaration",
+    "syntax": [
+      "END DEF"
+    ],
+    "doc": "Ends a multi-line DEF FN user function or a DEF CLASS definition.",
+    "block": "close"
+  },
+  "ENDTRACE": {
+    "category": "debug",
+    "syntax": [
+      "ENDTRACE"
+    ],
+    "doc": "Stop program statement tracing started with SETTRACE."
+  },
+  "END_IF": {
+    "category": "control",
+    "syntax": [
+      "IF cond THEN stmts [ELSE stmts] END_IF; stmt..."
+    ],
+    "doc": "Terminates the THEN/ELSE scope of an IF on the same line, so the statements that follow END_IF execute regardless of the condition. FI is an alias."
+  },
+  "END_TRY": {
+    "category": "control",
+    "syntax": [
+      "END_TRY"
+    ],
+    "doc": "Terminates a TRY ... CATCH ... END_TRY structure.",
+    "block": "close"
+  },
+  "ENTER": {
+    "category": "program",
+    "syntax": [
+      "ENTER [var[,var...]][,ERR=stmtref]"
+    ],
+    "doc": "Receive the arguments passed by CALL (by position) into local variables of the called program. Variables not listed are local."
+  },
+  "ERASE": {
+    "category": "file",
+    "syntax": [
+      "ERASE name$[,ERR=stmtref]"
+    ],
+    "doc": "Delete (erase) a file or empty directory from disk."
+  },
+  "ERROR_HANDLER": {
+    "category": "control",
+    "syntax": [
+      "ERROR_HANDLER program$",
+      "ERROR_HANDLER \"\""
+    ],
+    "doc": "Define a program to be performed when an untrapped error occurs (null string clears it)."
+  },
+  "ESCAPE": {
+    "category": "debug",
+    "syntax": [
+      "ESCAPE"
+    ],
+    "doc": "Interrupt program execution as if Escape/Break was pressed, entering command mode (debug)."
+  },
+  "EVENT": {
+    "category": "gui",
+    "syntax": [
+      "... EVENT ..."
+    ],
+    "doc": "Keyword used in event-related clauses (EVENT alone does not compile).",
+    "unverified": true
+  },
+  "EXCEPT": {
+    "category": "file",
+    "syntax": [
+      "SELECT ... EXCEPT ..."
+    ],
+    "doc": "Clause/keyword used to exclude items (e.g. in variable lists or SELECT).",
+    "unverified": true
+  },
+  "EXECUTE": {
+    "category": "program",
+    "syntax": [
+      "EXECUTE stmt$[,ERR=stmtref]"
+    ],
+    "doc": "Compile and execute a statement held in a string expression."
+  },
+  "EXIT": {
+    "category": "program",
+    "syntax": [
+      "EXIT [errnum]"
+    ],
+    "doc": "Return from a CALLed program to the caller; with an error number, the error is raised in the calling program."
+  },
+  "EXITTO": {
+    "category": "control",
+    "syntax": [
+      "EXITTO stmtref"
+    ],
+    "doc": "Exit the current loop or subroutine and transfer control to the given statement/label (pops the loop/GOSUB stack)."
+  },
+  "EXTRACT": {
+    "category": "file",
+    "syntax": [
+      "EXTRACT (chan[,KEY=k$|IND=n][,fileopt...])varlist",
+      "EXTRACT RECORD (chan,...)var$"
+    ],
+    "doc": "Read a record and lock it for update; the file pointer is not advanced, so a following WRITE updates the same record."
+  },
+  "FILE": {
+    "category": "file",
+    "syntax": [
+      "FILE description$[,name$]"
+    ],
+    "doc": "Create a file from a file description string.",
+    "unverified": true
+  },
+  "FINALLY": {
+    "category": "control",
+    "syntax": [
+      "FINALLY"
+    ],
+    "doc": "Introduces the section of TRY ... END_TRY that executes whether or not an error occurred (compiles in 9.62).",
+    "block": "middle"
+  },
+  "FIND": {
+    "category": "file",
+    "syntax": [
+      "FIND (chan,KEY=k$[,fileopt...])varlist",
+      "FIND RECORD (chan,...)var$"
+    ],
+    "doc": "Read a record by key/index without advancing the file pointer if not found; with DOM=/ERR= used to test existence."
+  },
+  "FLOATINGPOINT": {
+    "category": "system",
+    "syntax": [
+      "FLOATINGPOINT"
+    ],
+    "doc": "Switch numeric arithmetic to floating-point mode (instead of fixed PRECISION decimal mode)."
+  },
+  "FOR": {
+    "category": "control",
+    "syntax": [
+      "FOR var=start TO end [STEP inc]",
+      "FOR (chan)"
+    ],
+    "doc": "Start a counted loop ending with NEXT [var]. FOR (chan) iterates over the records of a file.",
+    "block": "open"
+  },
+  "FROM": {
+    "category": "file",
+    "syntax": [
+      "SELECT varlist FROM chan|file$ ..."
+    ],
+    "doc": "Clause of SELECT naming the channel or file to read."
+  },
+  "FUNCTION": {
+    "category": "oop",
+    "syntax": [
+      "FUNCTION name[$](param,...)[ label]",
+      "FUNCTION LOCAL name[$](param,...)[ label]",
+      "FUNCTION PERFORM name(param,...)"
+    ],
+    "doc": "Declare a method of a class inside DEF CLASS; the body starts at the given label (or the same-named label) and ends with RETURN value. FUNCTION LOCAL methods are private to the class."
+  },
+  "GET": {
+    "category": "oop",
+    "syntax": [
+      "PROPERTY name GET label"
+    ],
+    "doc": "Clause of PROPERTY naming the label that computes the value when the property is read."
+  },
+  "GET_FILE_BOX": {
+    "category": "gui",
+    "syntax": [
+      "GET_FILE_BOX var$,path$,title$[,filter$[,ext$]]",
+      "GET_FILE_BOX WRITE var$,..."
+    ],
+    "doc": "Display the standard Windows open (or save, with WRITE) file dialog and return the selected path."
+  },
+  "GOSUB": {
+    "category": "control",
+    "syntax": [
+      "GOSUB stmtref"
+    ],
+    "doc": "Call a subroutine at the line number or label; RETURN resumes after the GOSUB."
+  },
+  "GOTO": {
+    "category": "control",
+    "syntax": [
+      "GOTO stmtref"
+    ],
+    "doc": "Transfer control to the given line number or label."
+  },
+  "GRID": {
+    "category": "gui",
+    "syntax": [
+      "GRID ctl_id,@(col,line,width,height)[,ctlopt...]",
+      "GRID {READ|WRITE|...} ctl_id..."
+    ],
+    "doc": "Create or manipulate a grid (spreadsheet-style) GUI control."
+  },
+  "HIDE": {
+    "category": "gui",
+    "syntax": [
+      "HIDE CONTROL ctl_id"
+    ],
+    "doc": "Hide a GUI control or window."
+  },
+  "H_SCROLLBAR": {
+    "category": "gui",
+    "syntax": [
+      "H_SCROLLBAR ctl_id,@(col,line,width,height)[,ctlopt...]"
+    ],
+    "doc": "Create or manipulate a horizontal scroll bar GUI control."
+  },
+  "IF": {
+    "category": "control",
+    "syntax": [
+      "IF cond THEN stmt[; stmt...] [ELSE stmt[; stmt...]] [END_IF]",
+      "IF cond THEN {\n  ...\n} ELSE {\n  ...\n}"
+    ],
+    "doc": "Conditionally execute statements. In the single-line form the THEN (and ELSE) part runs to the end of the line, or up to END_IF, after which statements on the same line execute unconditionally. Use braces { } to span several lines."
+  },
+  "INDEX": {
+    "category": "file",
+    "syntax": [
+      "... INDEX ..."
+    ],
+    "doc": "Keyword used for index specifications (e.g. in key definitions).",
+    "unverified": true
+  },
+  "INDEXED": {
+    "category": "file",
+    "syntax": [
+      "INDEXED name$,records,reclen[,ERR=stmtref]"
+    ],
+    "doc": "Create an INDEXED (fixed-length, record-number accessed) data file."
+  },
+  "INPUT": {
+    "category": "io",
+    "syntax": [
+      "INPUT [(chan[,fileopt...])]['mnemonic',][@(col,line),]prompt$,var[,...]",
+      "INPUT EDIT ..."
+    ],
+    "doc": "Read data from the terminal or a file into variables. On a terminal, a prompt and position may precede each variable; options like LEN=, TIM=, HLP= apply."
+  },
+  "INSERT": {
+    "category": "program",
+    "syntax": [
+      "INSERT ..."
+    ],
+    "doc": "INSERT keyword (the 9.62 checker accepts any argument text, as for command-mode directives).",
+    "unverified": true
+  },
+  "INVOKE": {
+    "category": "system",
+    "syntax": [
+      "INVOKE [WAIT|HIDE] cmd$[,ERR=stmtref]"
+    ],
+    "doc": "Launch a Windows application/document (via the shell) from the program; INVOKE WAIT waits for it to end."
+  },
+  "IOLIST": {
+    "category": "declaration",
+    "syntax": [
+      "IOLIST var[,var...]"
+    ],
+    "doc": "Define a reusable list of variables referenced by IOL= options and the IOL() function."
+  },
+  "KEY": {
+    "category": "file",
+    "syntax": [
+      "... KEY=k$ ...",
+      "SELECT ... KEY k$"
+    ],
+    "doc": "Keyword/option: the key value for keyed file access."
+  },
+  "KEYED": {
+    "category": "file",
+    "syntax": [
+      "KEYED name$,[keydef...,]records,reclen[,ERR=stmtref]",
+      "KEYED name$,keylen,records,reclen"
+    ],
+    "doc": "Create a KEYED (multi-keyed, variable-length capable) data file, optionally with multiple key definitions."
+  },
+  "LET": {
+    "category": "declaration",
+    "syntax": [
+      "[LET] var=expr[,var=expr...]"
+    ],
+    "doc": "Assign values to variables. The LET keyword is optional."
+  },
+  "LIKE": {
+    "category": "oop",
+    "syntax": [
+      "LIKE \"parent_class\"[,\"class2\"...]"
+    ],
+    "doc": "Inside DEF CLASS, declares the class(es) this class inherits from."
+  },
+  "LINE_SWITCH": {
+    "category": "gui",
+    "syntax": [
+      "LINE_SWITCH [value]"
+    ],
+    "doc": "LINE_SWITCH directive (optional argument). Semantics not confirmed.",
+    "unverified": true
+  },
+  "LIST": {
+    "category": "program",
+    "syntax": [
+      "LIST [(chan)][from][,to]"
+    ],
+    "doc": "Command-mode directive: list program statements to the terminal or a channel. \\ is an alias."
+  },
+  "LIST_BOX": {
+    "category": "gui",
+    "syntax": [
+      "LIST_BOX ctl_id,@(col,line,width,height)[,ctlopt...]",
+      "LIST_BOX {LOAD|READ|...} ctl_id,var$"
+    ],
+    "doc": "Create or manipulate a list box GUI control (including report-view list boxes)."
+  },
+  "LOAD": {
+    "category": "program",
+    "syntax": [
+      "LOAD program$"
+    ],
+    "doc": "Load a program into memory (command mode) for editing or running."
+  },
+  "LOCAL": {
+    "category": "declaration",
+    "syntax": [
+      "LOCAL var[,var...]",
+      "FUNCTION LOCAL name(...)"
+    ],
+    "doc": "Declare variables local to the current routine/method; FUNCTION LOCAL declares a private method in DEF CLASS."
+  },
+  "LOCK": {
+    "category": "file",
+    "syntax": [
+      "LOCK (chan[,ERR=stmtref])"
+    ],
+    "doc": "Lock a file for exclusive use by this task (other users get Error #0 busy)."
+  },
+  "LONG_FORM": {
+    "category": "system",
+    "syntax": [
+      "LONG_FORM"
+    ],
+    "doc": "Display/list program keywords in long (full) form."
+  },
+  "MENU_BAR": {
+    "category": "gui",
+    "syntax": [
+      "MENU_BAR ctl_id,menu_def$"
+    ],
+    "doc": "Create a menu bar on the window from a menu definition string."
+  },
+  "MERGE": {
+    "category": "program",
+    "syntax": [
+      "MERGE (chan[,ERR=stmtref])"
+    ],
+    "doc": "Merge program statements read from a text file channel into the program in memory."
+  },
+  "MESSAGE_LIB": {
+    "category": "system",
+    "syntax": [
+      "MESSAGE_LIB lib$"
+    ],
+    "doc": "Set the message library used by MSG() and error messages."
+  },
+  "MNEMONIC": {
+    "category": "system",
+    "syntax": [
+      "MNEMONIC (chan)'XX'=value$"
+    ],
+    "doc": "Define or redefine a mnemonic for a channel (the output sequence produced for 'XX')."
+  },
+  "MSGBOX": {
+    "category": "gui",
+    "syntax": [
+      "MSGBOX msg$[,title$[,options$[,var$]]]"
+    ],
+    "doc": "Display a Windows message box; options select icon and buttons, and the button pressed is returned in var$."
+  },
+  "MULTI_LINE": {
+    "category": "gui",
+    "syntax": [
+      "MULTI_LINE ctl_id,@(col,line,width,height)[,ctlopt...]",
+      "MULTI_LINE {READ|WRITE|...} ctl_id..."
+    ],
+    "doc": "Create or manipulate a multi-line (or single-line) text edit GUI control."
+  },
+  "MULTI_MEDIA": {
+    "category": "gui",
+    "syntax": [
+      "MULTI_MEDIA command$[,arg$]"
+    ],
+    "doc": "Play multimedia (sound/video) or send a command to a multimedia device.",
+    "unverified": true
+  },
+  "NEXT": {
+    "category": "control",
+    "syntax": [
+      "NEXT [var]",
+      "NEXT RECORD"
+    ],
+    "doc": "End of a FOR loop: increment the loop variable and repeat if not past the end. NEXT RECORD ends a SELECT loop.",
+    "block": "close"
+  },
+  "NEXT RECORD": {
+    "category": "file",
+    "syntax": [
+      "NEXT RECORD"
+    ],
+    "doc": "Ends a SELECT ... FROM ... NEXT RECORD loop.",
+    "block": "close"
+  },
+  "OBJECT": {
+    "category": "oop",
+    "syntax": [
+      "DEF OBJECT handle,progid$",
+      "DELETE OBJECT handle",
+      "DROP OBJECT handle",
+      "OPEN OBJECT (chan)name$",
+      "PRECISION n FOR OBJECT"
+    ],
+    "doc": "Keyword used with object directives (DELETE OBJECT, DROP OBJECT, DEF OBJECT)."
+  },
+  "OBTAIN": {
+    "category": "io",
+    "syntax": [
+      "OBTAIN [(chan[,fileopt...])][@(col,line),]var[,...]"
+    ],
+    "doc": "Read keyboard input like INPUT but without echoing/displaying the characters."
+  },
+  "OFF": {
+    "category": "control",
+    "syntax": [
+      "SETTRACE OFF",
+      "... OFF"
+    ],
+    "doc": "Keyword used to turn options off (e.g. 'CURSOR'(\"OFF\"), PRECISION OFF style forms)."
+  },
+  "ON": {
+    "category": "control",
+    "syntax": [
+      "ON expr GOTO ref0,ref1,...",
+      "ON expr GOSUB ref0,ref1,..."
+    ],
+    "doc": "Computed branch: transfers to the reference selected by the (0-based) value of expr; values beyond the list go to the last reference."
+  },
+  "OPEN": {
+    "category": "file",
+    "syntax": [
+      "OPEN [LOCK|INPUT|OBJECT] (chan[,ISZ=n][,OPT=opt$][,IOL=ref][,ERR=stmtref][,BSY=stmtref])name$"
+    ],
+    "doc": "Open a file or device on a channel. OPEN LOCK opens exclusively, OPEN INPUT opens read-only. Use UNT/HFN to obtain a free channel number."
+  },
+  "OR": {
+    "category": "control",
+    "syntax": [
+      "expr OR expr"
+    ],
+    "doc": "Logical OR operator: true (1) when either operand is non-zero."
+  },
+  "PASSWORD": {
+    "category": "file",
+    "syntax": [
+      "PASSWORD pswd$"
+    ],
+    "doc": "Assign a password to a data file."
+  },
+  "PERFORM": {
+    "category": "program",
+    "syntax": [
+      "PERFORM program$[,ERR=stmtref]",
+      "PERFORM \"prog;label\""
+    ],
+    "doc": "Call an external program that shares the caller's variables (no ENTER needed); control returns to the caller on EXIT."
+  },
+  "POP": {
+    "category": "control",
+    "syntax": [
+      "POP"
+    ],
+    "doc": "Remove the most recent GOSUB return address / loop entry from the stack without returning."
+  },
+  "POPUP_MENU": {
+    "category": "gui",
+    "syntax": [
+      "POPUP_MENU menu$,result$"
+    ],
+    "doc": "Display a pop-up (context) menu.",
+    "unverified": true
+  },
+  "PRECISION": {
+    "category": "system",
+    "syntax": [
+      "PRECISION n",
+      "PRECISION n FOR OBJECT"
+    ],
+    "doc": "Set the number of decimal places to which numeric results are rounded (default 2)."
+  },
+  "PREFIX": {
+    "category": "system",
+    "syntax": [
+      "PREFIX dir$[ dir$...]",
+      "PREFIX FILE file$",
+      "PREFIX PROGRAM dir$"
+    ],
+    "doc": "Set the search path (prefix list) used to locate files and programs; see PFX."
+  },
+  "PREINPUT": {
+    "category": "io",
+    "syntax": [
+      "PREINPUT text$",
+      "PREINPUT -1"
+    ],
+    "doc": "Supply characters (keystrokes) to be read by subsequent INPUTs as if typed."
+  },
+  "PRINT": {
+    "category": "io",
+    "syntax": [
+      "PRINT [(chan[,fileopt...])]['mnemonic',][@(col[,line]),]expr[,|;...]"
+    ],
+    "doc": "Output data to the terminal or to a channel. Items may include mnemonics ('CS'), positioning @(col,line), and formatted numbers (n:mask$). ? is an alias."
+  },
+  "PROCEED": {
+    "category": "control",
+    "syntax": [
+      "ERR=*PROCEED"
+    ],
+    "doc": "Keyword used as the *PROCEED branch target (PROCEED alone does not compile).",
+    "unverified": true
+  },
+  "PROCESS": {
+    "category": "gui",
+    "syntax": [
+      "PROCESS panel$,library$[,arg$]"
+    ],
+    "doc": "Run an NOMADS panel (screen) definition from a library."
+  },
+  "PROGRAM": {
+    "category": "file",
+    "syntax": [
+      "PROGRAM name$[,size][,ERR=stmtref]",
+      "... FOR PROGRAM ..."
+    ],
+    "doc": "Create a program file; also a keyword in FUNCTION ... FOR PROGRAM and PREFIX PROGRAM."
+  },
+  "PROPERTIES": {
+    "category": "oop",
+    "syntax": [
+      "... PROPERTIES ..."
+    ],
+    "doc": "Keyword used with object/control properties (PROPERTIES alone does not compile).",
+    "unverified": true
+  },
+  "PROPERTY": {
+    "category": "oop",
+    "syntax": [
+      "PROPERTY name[$][ GET label][ SET label|ERR]"
+    ],
+    "doc": "Declare a property of a class inside DEF CLASS, optionally with GET/SET labels for computed access (SET ERR makes it read-only). (PROPERTY LOCAL/HIDE do not compile in 9.62.)"
+  },
+  "PURGE": {
+    "category": "file",
+    "syntax": [
+      "PURGE (chan[,ERR=stmtref])"
+    ],
+    "doc": "Remove all records from an open file (empty it)."
+  },
+  "QUIT": {
+    "category": "system",
+    "syntax": [
+      "QUIT"
+    ],
+    "doc": "Terminate ProvideX and return to the operating system. BYE is an alias."
+  },
+  "RADIO_BUTTON": {
+    "category": "gui",
+    "syntax": [
+      "RADIO_BUTTON ctl_id,@(col,line,width,height)=text$"
+    ],
+    "doc": "Create or manipulate a radio (option) button GUI control. Syntax not confirmed by the 9.62 checker.",
+    "unverified": true
+  },
+  "RANDOM": {
+    "category": "system",
+    "syntax": [
+      "RANDOM ..."
+    ],
+    "doc": "Keyword related to random numbers.",
+    "unverified": true
+  },
+  "RANDOMIZE": {
+    "category": "system",
+    "syntax": [
+      "RANDOMIZE seed"
+    ],
+    "doc": "Re-seed the random number generator used by RND with the given value (RANDOMIZE without an argument does not compile)."
+  },
+  "READ": {
+    "category": "file",
+    "syntax": [
+      "READ (chan[,KEY=k$|IND=n|RNO=n][,KNO=n][,fileopt...])varlist",
+      "READ RECORD (chan,...)var$",
+      "READ DATA varlist"
+    ],
+    "doc": "Read the next (or specified) record from a file into the variables. READ RECORD reads the whole record into one string; READ DATA reads DATA constants."
+  },
+  "READDATA": {
+    "category": "declaration",
+    "syntax": [
+      "READ DATA var[,var...]"
+    ],
+    "doc": "Read values from DATA statements (internal form of READ DATA)."
+  },
+  "RECORD": {
+    "category": "file",
+    "syntax": [
+      "READ RECORD (chan...)var$",
+      "WRITE RECORD (chan...)expr$",
+      "NEXT RECORD"
+    ],
+    "doc": "Keyword modifying READ/WRITE/EXTRACT/FIND/INPUT: transfer the entire record as a single string without field parsing."
+  },
+  "REDIM": {
+    "category": "declaration",
+    "syntax": [
+      "REDIM arr[n[,m[,p]]]"
+    ],
+    "doc": "Re-dimension an existing array (square brackets), preserving existing elements where possible."
+  },
+  "REFILE": {
+    "category": "file",
+    "syntax": [
+      "REFILE name$[,name2$]"
+    ],
+    "doc": "Rebuild / reorganise a data file.",
+    "unverified": true
+  },
+  "RELEASE": {
+    "category": "system",
+    "syntax": [
+      "RELEASE"
+    ],
+    "doc": "Terminate ProvideX (release the session), like QUIT."
+  },
+  "REM": {
+    "category": "program",
+    "syntax": [
+      "REM comment",
+      "! comment"
+    ],
+    "doc": "Remark (comment) statement; the rest of the line is ignored. ! also starts a comment."
+  },
+  "REMOVE": {
+    "category": "file",
+    "syntax": [
+      "REMOVE (chan,KEY=k$[,fileopt...])",
+      "REMOVE (chan,IND=n)"
+    ],
+    "doc": "Delete the record with the given key (or index) from a file; DOM= traps a missing key."
+  },
+  "RENAME": {
+    "category": "file",
+    "syntax": [
+      "RENAME old$ TO new$[,ERR=stmtref]",
+      "RENAME old$,new$"
+    ],
+    "doc": "Rename (or move) a file."
+  },
+  "RENUMBER": {
+    "category": "program",
+    "syntax": [
+      "RENUMBER [start[,inc[,from[,to]]]]"
+    ],
+    "doc": "Command-mode directive: renumber the program statements."
+  },
+  "REPEAT": {
+    "category": "control",
+    "syntax": [
+      "REPEAT\n  ...\nUNTIL cond"
+    ],
+    "doc": "Start a loop that executes at least once and repeats until the UNTIL condition is true.",
+    "block": "open"
+  },
+  "REQUIRED": {
+    "category": "oop",
+    "syntax": [
+      "DEF CLASS \"name\" CREATE REQUIRED",
+      "DEF CLASS \"name\" DELETE REQUIRED"
+    ],
+    "doc": "Clause of DEF CLASS requiring the class to define ON_CREATE / ON_DELETE methods (constructor/destructor)."
+  },
+  "RESET": {
+    "category": "system",
+    "syntax": [
+      "RESET"
+    ],
+    "doc": "Reset program state (stacks, error handling) and return to the start / command level.",
+    "unverified": true
+  },
+  "RESTORE": {
+    "category": "declaration",
+    "syntax": [
+      "RESTORE [stmtref]"
+    ],
+    "doc": "Reset the DATA pointer so that the next READ DATA reads from the beginning (or the given statement)."
+  },
+  "RETRY": {
+    "category": "control",
+    "syntax": [
+      "RETRY"
+    ],
+    "doc": "Re-execute the statement that caused the last error (used in error-handling routines)."
+  },
+  "RETURN": {
+    "category": "control",
+    "syntax": [
+      "RETURN",
+      "RETURN value"
+    ],
+    "doc": "Return from a GOSUB subroutine; in a DEF FN or object method, RETURN value returns the function result."
+  },
+  "ROUND": {
+    "category": "system",
+    "syntax": [
+      "ROUND ON",
+      "ROUND OFF"
+    ],
+    "doc": "Turn numeric rounding (to PRECISION) on or off.",
+    "unverified": true
+  },
+  "RUN": {
+    "category": "program",
+    "syntax": [
+      "RUN [program$][,ERR=stmtref]"
+    ],
+    "doc": "Run the program in memory, or load and run the named program (all variables are cleared)."
+  },
+  "SAME": {
+    "category": "control",
+    "syntax": [
+      "... SAME ..."
+    ],
+    "doc": "Keyword referring to the same statement/value (e.g. as a branch target or option value).",
+    "unverified": true
+  },
+  "SAVE": {
+    "category": "program",
+    "syntax": [
+      "SAVE [program$]"
+    ],
+    "doc": "Save the program in memory to disk (command mode)."
+  },
+  "SECURITY_MASK": {
+    "category": "file",
+    "syntax": [
+      "SECURITY_MASK READ var$"
+    ],
+    "doc": "Read the security (permission) mask used when creating files.",
+    "unverified": true
+  },
+  "SELECT": {
+    "category": "file",
+    "syntax": [
+      "SELECT varlist FROM chan|file$ [BEGIN k$][END k$][KNO=n][WHERE cond]\n  ...\nNEXT RECORD"
+    ],
+    "doc": "Loop over the records of a file (optionally limited by BEGIN/END keys and a WHERE condition), reading each into the variables; the loop ends with NEXT RECORD.",
+    "block": "open"
+  },
+  "SERIAL": {
+    "category": "file",
+    "syntax": [
+      "SERIAL name$[,records,reclen][,ERR=stmtref]"
+    ],
+    "doc": "Create a SERIAL (sequential) data file."
+  },
+  "SERVER": {
+    "category": "system",
+    "syntax": [
+      "... SERVER ..."
+    ],
+    "doc": "Keyword used with client/server (e.g. file server) operations.",
+    "unverified": true
+  },
+  "SET": {
+    "category": "oop",
+    "syntax": [
+      "PROPERTY name SET label"
+    ],
+    "doc": "Clause of PROPERTY naming the label executed when the property is assigned (SET ERR makes it read-only)."
+  },
+  "SETCTL": {
+    "category": "system",
+    "syntax": [
+      "SETCTL ..."
+    ],
+    "doc": "Set control-key handling. Syntax not confirmed by the 9.62 checker.",
+    "unverified": true
+  },
+  "SETDAY": {
+    "category": "system",
+    "syntax": [
+      "SETDAY date$"
+    ],
+    "doc": "Set the date returned by the DAY system variable."
+  },
+  "SETDEV": {
+    "category": "system",
+    "syntax": [
+      "SETDEV (chan) string$"
+    ],
+    "doc": "Set device characteristics for a channel from a definition string.",
+    "unverified": true
+  },
+  "SETDRIVE": {
+    "category": "system",
+    "syntax": [
+      "SETDRIVE drive"
+    ],
+    "doc": "Set the current drive.",
+    "unverified": true
+  },
+  "SETERR": {
+    "category": "control",
+    "syntax": [
+      "SETERR stmtref",
+      "SETERR 0"
+    ],
+    "doc": "Set a program-wide error branch: untrapped errors transfer to the statement; SETERR 0 cancels it."
+  },
+  "SETESC": {
+    "category": "control",
+    "syntax": [
+      "SETESC stmtref",
+      "SETESC 0"
+    ],
+    "doc": "Set an escape (interrupt) branch: pressing Escape/Break transfers to the statement; SETESC 0 cancels it."
+  },
+  "SETFID": {
+    "category": "system",
+    "syntax": [
+      "SETFID fid$",
+      "SETFID (chan) fid$"
+    ],
+    "doc": "Set the file/terminal identifier returned by FID().",
+    "unverified": true
+  },
+  "SETMOUSE": {
+    "category": "gui",
+    "syntax": [
+      "SETMOUSE ON",
+      "SETMOUSE OFF"
+    ],
+    "doc": "Turn mouse support on or off.",
+    "unverified": true
+  },
+  "SETTIME": {
+    "category": "system",
+    "syntax": [
+      "SETTIME hours"
+    ],
+    "doc": "Set the time returned by the TIM system variable."
+  },
+  "SETTRACE": {
+    "category": "debug",
+    "syntax": [
+      "SETTRACE [(chan)]"
+    ],
+    "doc": "Start tracing executed program statements (to the terminal or a channel); stop with ENDTRACE."
+  },
+  "SET_FOCUS": {
+    "category": "gui",
+    "syntax": [
+      "SET_FOCUS ctl_id"
+    ],
+    "doc": "Move the input focus to the given GUI control."
+  },
+  "SET_NBF": {
+    "category": "gui",
+    "syntax": [
+      "SET_NBF n",
+      "SET_NBF ON|OFF"
+    ],
+    "doc": "SET_NBF directive taking a number or ON/OFF. Semantics not confirmed.",
+    "unverified": true
+  },
+  "SET_PARAM": {
+    "category": "system",
+    "syntax": [
+      "SET_PARAM 'XX'[=value][,'YY'...]",
+      "SET_PARAM -'XX'"
+    ],
+    "doc": "Set (or with -'XX' clear) system parameters, e.g. SET_PARAM 'BY'=1900. Read them back with PRM('XX')."
+  },
+  "SHORT_FORM": {
+    "category": "system",
+    "syntax": [
+      "SHORT_FORM"
+    ],
+    "doc": "Display/list program keywords in their short (abbreviated) form."
+  },
+  "SHOW": {
+    "category": "gui",
+    "syntax": [
+      "SHOW CONTROL ctl_id"
+    ],
+    "doc": "Make a hidden GUI control/window visible."
+  },
+  "SORT": {
+    "category": "file",
+    "syntax": [
+      "SORT name$,keylen,records[,ERR=stmtref]"
+    ],
+    "doc": "Create a SORT (key-only) file."
+  },
+  "START": {
+    "category": "system",
+    "syntax": [
+      "START [size]"
+    ],
+    "doc": "Restart ProvideX (clears everything and re-runs the start-up program). Do not use from embedded/COM sessions."
+  },
+  "STATIC": {
+    "category": "declaration",
+    "syntax": [
+      "STATIC var[,var...]"
+    ],
+    "doc": "Declare static variables (the 9.62 checker accepts almost any argument text after STATIC).",
+    "unverified": true
+  },
+  "STEP": {
+    "category": "control",
+    "syntax": [
+      "FOR var=start TO end STEP inc"
+    ],
+    "doc": "Clause of FOR giving the increment (may be negative)."
+  },
+  "STOP": {
+    "category": "control",
+    "syntax": [
+      "STOP"
+    ],
+    "doc": "Halt program execution and enter command mode (files remain open)."
+  },
+  "SWAP": {
+    "category": "declaration",
+    "syntax": [
+      "SWAP (n)"
+    ],
+    "doc": "SWAP directive taking a parenthesised value (e.g. a window/channel number). Semantics not confirmed; SWAP a,b does not compile.",
+    "unverified": true
+  },
+  "SWITCH": {
+    "category": "control",
+    "syntax": [
+      "SWITCH expr\n  CASE v1[,v2]\n    ...\n  DEFAULT\n    ...\nEND SWITCH"
+    ],
+    "doc": "Multi-way branch: compares expr against each CASE value and executes the matching branch (BREAK leaves the switch).",
+    "block": "open"
+  },
+  "SYSTEM_HELP": {
+    "category": "gui",
+    "syntax": [
+      "SYSTEM_HELP file$[,topic$]"
+    ],
+    "doc": "Invoke the Windows help system for the given help file/topic."
+  },
+  "SYSTEM_JRNL": {
+    "category": "file",
+    "syntax": [
+      "SYSTEM_JRNL CLOSE",
+      "SYSTEM_JRNL ..."
+    ],
+    "doc": "Control the system journal (file update journaling); SYSTEM_JRNL CLOSE closes it.",
+    "unverified": true
+  },
+  "TABLE": {
+    "category": "declaration",
+    "syntax": [
+      "TABLE hexdigits"
+    ],
+    "doc": "Define a character translation table (hex byte list) referenced by TBL= options; the TABLE statement must be referenced by line number/label."
+  },
+  "THEN": {
+    "category": "control",
+    "syntax": [
+      "IF cond THEN stmts"
+    ],
+    "doc": "Clause of IF introducing the statements executed when the condition is true."
+  },
+  "TO": {
+    "category": "control",
+    "syntax": [
+      "FOR var=start TO end",
+      "RENAME a$ TO b$"
+    ],
+    "doc": "Clause giving the end value of a FOR loop (also RENAME old$ TO new$)."
+  },
+  "TRANSLATE": {
+    "category": "system",
+    "syntax": [
+      "TRANSLATE from$,to$"
+    ],
+    "doc": "Set up character translation (from$ characters translated to to$).",
+    "unverified": true
+  },
+  "TRISTATE_BOX": {
+    "category": "gui",
+    "syntax": [
+      "TRISTATE_BOX ctl_id,@(col,line,width,height)=text$[,ctlopt...]"
+    ],
+    "doc": "Create or manipulate a three-state check box GUI control."
+  },
+  "TRY": {
+    "category": "control",
+    "syntax": [
+      "TRY\n  ...\nCATCH\n  ...\nEND_TRY"
+    ],
+    "doc": "Start a structured error-handling block: errors in the TRY section transfer to CATCH.",
+    "block": "open"
+  },
+  "UNIQUE": {
+    "category": "file",
+    "syntax": [
+      "... UNIQUE ..."
+    ],
+    "doc": "Keyword in key definitions marking a key as unique (no duplicates).",
+    "unverified": true
+  },
+  "UNLOCK": {
+    "category": "file",
+    "syntax": [
+      "UNLOCK (chan[,ERR=stmtref])"
+    ],
+    "doc": "Release a file lock set by LOCK (or record locks held on the channel)."
+  },
+  "UNTIL": {
+    "category": "control",
+    "syntax": [
+      "UNTIL cond"
+    ],
+    "doc": "End of a REPEAT loop: the loop repeats until the condition is true.",
+    "block": "close"
+  },
+  "UPDATE": {
+    "category": "file",
+    "syntax": [
+      "UPDATE ..."
+    ],
+    "doc": "UPDATE keyword (the 9.62 checker accepts any argument text, as for command-mode directives).",
+    "unverified": true
+  },
+  "USER_LEX": {
+    "category": "system",
+    "syntax": [
+      "USER_LEX ..."
+    ],
+    "doc": "Define user lexical (keyword) extensions. Syntax not confirmed by the 9.62 checker.",
+    "unverified": true
+  },
+  "VARDROP_BOX": {
+    "category": "gui",
+    "syntax": [
+      "VARDROP_BOX ctl_id,@(col,line,width,height)[,ctlopt...]"
+    ],
+    "doc": "Create or manipulate a variable (editable) drop box GUI control."
+  },
+  "VARLIST_BOX": {
+    "category": "gui",
+    "syntax": [
+      "VARLIST_BOX ctl_id,@(col,line,width,height)[,ctlopt...]"
+    ],
+    "doc": "Create or manipulate a variable (editable) list box GUI control."
+  },
+  "VIA": {
+    "category": "oop",
+    "syntax": [
+      "... VIA ..."
+    ],
+    "doc": "Keyword used to access something via an object or reference.",
+    "unverified": true
+  },
+  "VIDEO_PALETTE": {
+    "category": "gui",
+    "syntax": [
+      "VIDEO_PALETTE palette$",
+      "VIDEO_PALETTE READ var$"
+    ],
+    "doc": "Set (or READ) the colour palette used for text colours.",
+    "unverified": true
+  },
+  "V_SCROLLBAR": {
+    "category": "gui",
+    "syntax": [
+      "V_SCROLLBAR ctl_id,@(col,line,width,height)[,ctlopt...]"
+    ],
+    "doc": "Create or manipulate a vertical scroll bar GUI control."
+  },
+  "WAIT": {
+    "category": "system",
+    "syntax": [
+      "WAIT seconds"
+    ],
+    "doc": "Suspend execution for the given number of seconds."
+  },
+  "WEND": {
+    "category": "control",
+    "syntax": [
+      "WEND"
+    ],
+    "doc": "End of a WHILE loop.",
+    "block": "close"
+  },
+  "WHERE": {
+    "category": "file",
+    "syntax": [
+      "SELECT ... WHERE cond"
+    ],
+    "doc": "Clause of SELECT giving a condition records must satisfy to be processed."
+  },
+  "WHILE": {
+    "category": "control",
+    "syntax": [
+      "WHILE cond\n  ...\nWEND"
+    ],
+    "doc": "Loop while the condition is true; the loop body ends with WEND.",
+    "block": "open"
+  },
+  "WINDOW": {
+    "category": "gui",
+    "syntax": [
+      "WINDOW ..."
+    ],
+    "doc": "Keyword used with window operations.",
+    "unverified": true
+  },
+  "WINPRT_SETUP": {
+    "category": "gui",
+    "syntax": [
+      "WINPRT_SETUP READ var$",
+      "WINPRT_SETUP WRITE var$"
+    ],
+    "doc": "Read or set the Windows printer setup (printer selection/settings) as a string.",
+    "unverified": true
+  },
+  "WITH": {
+    "category": "control",
+    "syntax": [
+      "WITH n"
+    ],
+    "doc": "WITH directive taking a numeric value. Semantics not confirmed.",
+    "unverified": true
+  },
+  "WRITE": {
+    "category": "file",
+    "syntax": [
+      "WRITE (chan[,KEY=k$|IND=n][,fileopt...])varlist",
+      "WRITE RECORD (chan,...)expr$"
+    ],
+    "doc": "Write a record (fields separated by SEP) to a file; on keyed files DOM= traps duplicate keys. WRITE RECORD writes a string as the whole record."
+  },
+  "DEF CLASS": {
+    "category": "oop",
+    "syntax": [
+      "DEF CLASS \"name\"[ CREATE REQUIRED][ DELETE REQUIRED]\n  LIKE \"parent\"\n  PROPERTY ...\n  FUNCTION ...\nEND DEF"
+    ],
+    "doc": "Define an object class: its properties, methods (FUNCTION) and inheritance (LIKE), terminated by END DEF.",
+    "block": "open"
+  },
+  "END DEF": {
+    "category": "declaration",
+    "syntax": [
+      "END DEF"
+    ],
+    "doc": "Terminates a multi-line DEF FN function or a DEF CLASS definition.",
+    "block": "close"
+  },
+  "DEF FN": {
+    "category": "declaration",
+    "syntax": [
+      "DEF FNname[$](param,...)=expr",
+      "DEF FNname[$](param,...)\n  ...\n  RETURN value\nEND DEF"
+    ],
+    "doc": "Define a user function, called as FNname(...) (string functions end in $). Multi-line functions return their value with RETURN and end with END DEF."
+  },
+  "FUNCTION LOCAL": {
+    "category": "oop",
+    "syntax": [
+      "FUNCTION LOCAL name(param,...)[ label]"
+    ],
+    "doc": "Declare a method that can only be called from within the class (and its derived classes)."
+  },
+  "PROPERTY GET/SET": {
+    "category": "oop",
+    "syntax": [
+      "PROPERTY name GET get_label SET set_label",
+      "PROPERTY name SET ERR"
+    ],
+    "doc": "Computed property: reading it performs the GET label (which RETURNs the value), assigning performs the SET label (new value is in the property variable)."
+  },
+  "ON GOTO/ON GOSUB": {
+    "category": "control",
+    "syntax": [
+      "ON expr GOTO ref0,ref1,...",
+      "ON expr GOSUB ref0,ref1,..."
+    ],
+    "doc": "Computed branch: expr=0 selects the first reference, 1 the second, etc.; values beyond the list select the last."
+  },
+  "IF..THEN..ELSE..END_IF": {
+    "category": "control",
+    "syntax": [
+      "IF cond THEN stmt1 ELSE stmt2 END_IF; stmt3",
+      "IF cond THEN {\n  ...\n} ELSE {\n  ...\n}"
+    ],
+    "doc": "IF with an END_IF terminator: stmt3 runs whatever the condition. Multi-line IF blocks use braces { } (a line ending in \\ is NOT a continuation: \\ is an alias of LIST)."
+  },
+  "SELECT..FROM..BEGIN..END..WHERE": {
+    "category": "file",
+    "syntax": [
+      "SELECT IOL=iol FROM \"file\" BEGIN start$ END end$ WHERE cond\n  ...\nNEXT RECORD"
+    ],
+    "doc": "Record selection loop over a file with optional key range and filter condition."
+  },
+  "TRY/CATCH/FINALLY/END_TRY": {
+    "category": "control",
+    "syntax": [
+      "TRY\n  ...\nCATCH\n  ...\nFINALLY\n  ...\nEND_TRY"
+    ],
+    "doc": "Structured error handling block."
+  },
+  "WHILE/WEND": {
+    "category": "control",
+    "syntax": [
+      "WHILE cond\n  ...\nWEND"
+    ],
+    "doc": "Pre-tested loop."
+  },
+  "REPEAT/UNTIL": {
+    "category": "control",
+    "syntax": [
+      "REPEAT\n  ...\nUNTIL cond"
+    ],
+    "doc": "Post-tested loop (body executes at least once)."
+  },
+  "FOR/NEXT": {
+    "category": "control",
+    "syntax": [
+      "FOR i=1 TO 10 [STEP 1]\n  ...\nNEXT i"
+    ],
+    "doc": "Counted loop."
+  },
+  "SWITCH/CASE/DEFAULT/END SWITCH": {
+    "category": "control",
+    "syntax": [
+      "SWITCH expr\n  CASE 1,2\n    ...\n    BREAK\n  DEFAULT\n    ...\nEND SWITCH"
+    ],
+    "doc": "Multi-way branch statement."
+  },
+  "DEF OBJECT": {
+    "category": "oop",
+    "syntax": [
+      "DEF OBJECT handle,progid$",
+      "DEF OBJECT handle,@(col,line,width,height)=progid$"
+    ],
+    "doc": "Create a COM (ActiveX/OLE automation) object, optionally as a visible control at the given position; the handle is used with handle'property and DELETE OBJECT."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "function": { "prefix": "function", "body": ["function ${1:name}(${2:args}) {", "\tlet ${3:result}", "\t$0", "\treturn ${3:result}", "}"], "description": "Function with local scope (compiles to DEF FN with LOCAL variables)" },
+  "string function": { "prefix": "function$", "body": ["function ${1:name}\\$(${2:args}) {", "\tlet out\\$ = \"\"", "\t$0", "\treturn out\\$", "}"], "description": "String-returning function" },
+  "if": { "prefix": "if", "body": ["if (${1:condition}) {", "\t$0", "}"] },
+  "if else": { "prefix": "ifelse", "body": ["if (${1:condition}) {", "\t$2", "} else {", "\t$0", "}"] },
+  "for": { "prefix": "for", "body": ["for (${1:i} = ${2:1}; ${1:i} <= ${3:10}; ${1:i}++) {", "\t$0", "}"], "description": "FOR ... NEXT loop" },
+  "while": { "prefix": "while", "body": ["while (${1:condition}) {", "\t$0", "}"] },
+  "repeat": { "prefix": "repeat", "body": ["repeat {", "\t$0", "} until (${1:condition})"] },
+  "switch": { "prefix": "switch", "body": ["switch (${1:expr}) {", "\tcase ${2:value}:", "\t\t$0", "\t\tbreak;", "\tdefault:", "}"] },
+  "select": { "prefix": "select", "body": ["select *, REC=${1:rec\\$} from ${2:chan} begin ${3:key\\$} end ${4:key\\$} + \"\\xFE\" where ${5:condition} {", "\t$0", "}"], "description": "SELECT ... NEXT RECORD loop over a file" },
+  "try": { "prefix": "try", "body": ["try {", "\t$1", "} catch {", "\t$0", "}"] },
+  "class": { "prefix": "class", "body": ["@create(required)", "@delete(required)", "class ${1:Name} extends ${2:SY_Service} {", "\tpublic ${3:Value\\$};", "\tprivate ${4:coSession};", "", "\tconstructor(coSession) {", "\t\treturn;", "\t}", "", "\t${5:DoWork}(${6:arg\\$}) {", "\t\t$0", "\t\treturn retSUCCESS;", "\t}", "}"], "description": "Class with methods (compiles to DEF CLASS ... END DEF and LABEL: sections)" },
+  "raw ProvideX": { "prefix": "pvx", "body": ["pvx`${1:PRINT 'CS'}`"], "description": "Embed a raw ProvideX statement" }
+}

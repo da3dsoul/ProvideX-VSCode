@@ -1,0 +1,502 @@
+{
+ "0": {
+  "kind": "error",
+  "text": "Record/file busy"
+ },
+ "1": {
+  "kind": "error",
+  "text": "Logical END-OF-RECORD reached"
+ },
+ "2": {
+  "kind": "error",
+  "text": "END-OF-FILE on read or File full on write"
+ },
+ "3": {
+  "kind": "error",
+  "text": "Input/Output error on file"
+ },
+ "4": {
+  "kind": "error",
+  "text": "Device not ready"
+ },
+ "5": {
+  "kind": "error",
+  "text": "Data error on device or file"
+ },
+ "6": {
+  "kind": "error",
+  "text": "Directory error"
+ },
+ "7": {
+  "kind": "error",
+  "text": "Access out of file boundaries"
+ },
+ "8": {
+  "kind": "error",
+  "text": "Data write error"
+ },
+ "9": {
+  "kind": "error",
+  "text": "Unable to restore calling program"
+ },
+ "10": {
+  "kind": "error",
+  "text": "Illegal pathname specified"
+ },
+ "11": {
+  "kind": "error",
+  "text": "Record not found or Duplicate key on write"
+ },
+ "12": {
+  "kind": "error",
+  "text": "File does not exist (or already exists)"
+ },
+ "13": {
+  "kind": "error",
+  "text": "File access mode invalid"
+ },
+ "14": {
+  "kind": "error",
+  "text": "Invalid I/O request for file state"
+ },
+ "15": {
+  "kind": "error",
+  "text": "Operating system command failed"
+ },
+ "16": {
+  "kind": "error",
+  "text": "File/Disc is full"
+ },
+ "17": {
+  "kind": "error",
+  "text": "Invalid file type or contents"
+ },
+ "18": {
+  "kind": "error",
+  "text": "Program not loaded/Invalid program format"
+ },
+ "19": {
+  "kind": "error",
+  "text": "Program size too large"
+ },
+ "20": {
+  "kind": "error",
+  "text": "Syntax error"
+ },
+ "21": {
+  "kind": "error",
+  "text": "Statement number is invalid"
+ },
+ "22": {
+  "kind": "error",
+  "text": "Invalid compound statement"
+ },
+ "23": {
+  "kind": "error",
+  "text": "Missing/Invalid variable"
+ },
+ "24": {
+  "kind": "error",
+  "text": "Attempt to duplicate a function/variable name"
+ },
+ "25": {
+  "kind": "error",
+  "text": "Invalid call to user function (Non-existent or recursive)"
+ },
+ "26": {
+  "kind": "error",
+  "text": "Variable type invalid"
+ },
+ "27": {
+  "kind": "error",
+  "text": "Unexpected or incorrect WEND, RETURN, WITH or NEXT"
+ },
+ "28": {
+  "kind": "error",
+  "text": "No corresponding FOR for NEXT"
+ },
+ "29": {
+  "kind": "error",
+  "text": "Invalid Mnemonic or position specification"
+ },
+ "30": {
+  "kind": "error",
+  "text": "Statement exceeds system limits (nesting/arguments)"
+ },
+ "31": {
+  "kind": "error",
+  "text": "Memory limits reached -- Increase '-SZ' option"
+ },
+ "32": {
+  "kind": "error",
+  "text": "Invalid or redundant Input/Output option"
+ },
+ "33": {
+  "kind": "error",
+  "text": "Insufficent memory available in system -- try later"
+ },
+ "34": {
+  "kind": "error",
+  "text": "Directive not allowed from COMMAND mode"
+ },
+ "35": {
+  "kind": "error",
+  "text": "Invalid date/time specified"
+ },
+ "36": {
+  "kind": "error",
+  "text": "ENTER parameters don't match those of the CALL"
+ },
+ "37": {
+  "kind": "error",
+  "text": "Directive can only execute in subprogram"
+ },
+ "38": {
+  "kind": "error",
+  "text": "Directive cannot be used within CALLed program"
+ },
+ "39": {
+  "kind": "error",
+  "text": "Invalid record definition"
+ },
+ "40": {
+  "kind": "error",
+  "text": "Divide check or numeric overflow"
+ },
+ "41": {
+  "kind": "error",
+  "text": "Invalid integer encountered (range error or non-integer)"
+ },
+ "42": {
+  "kind": "error",
+  "text": "Subscript out of range/Invalid subscript"
+ },
+ "43": {
+  "kind": "error",
+  "text": "Format mask invalid"
+ },
+ "44": {
+  "kind": "error",
+  "text": "Invalid step value"
+ },
+ "45": {
+  "kind": "error",
+  "text": "Referenced statement invalid"
+ },
+ "46": {
+  "kind": "error",
+  "text": "Length of string invalid"
+ },
+ "47": {
+  "kind": "error",
+  "text": "Substring reference out of string"
+ },
+ "48": {
+  "kind": "error",
+  "text": "Invalid input -- Try again"
+ },
+ "49": {
+  "kind": "error",
+  "text": "<*> Internal program format error <*>"
+ },
+ "50": {
+  "kind": "error",
+  "text": "Reserved for Future use"
+ },
+ "51": {
+  "kind": "error",
+  "text": "Invalid VFU/key load"
+ },
+ "52": {
+  "kind": "error",
+  "text": "Program is password protected"
+ },
+ "53": {
+  "kind": "error",
+  "text": "Invalid password"
+ },
+ "54": {
+  "kind": "error",
+  "text": "Unable to load Error Handler"
+ },
+ "55": {
+  "kind": "error",
+  "text": "Cannot locate statement label"
+ },
+ "56": {
+  "kind": "error",
+  "text": "Duplicate statement label"
+ },
+ "57": {
+  "kind": "error",
+  "text": "No such window defined"
+ },
+ "58": {
+  "kind": "error",
+  "text": "Line(s) in GOSUB/FOR/WHILE stack"
+ },
+ "59": {
+  "kind": "error",
+  "text": "Invalid directive in function/object definition"
+ },
+ "60": {
+  "kind": "error",
+  "text": "Invalid control argument value"
+ },
+ "61": {
+  "kind": "error",
+  "text": "Authorization failure"
+ },
+ "62": {
+  "kind": "error",
+  "text": "Not a development system"
+ },
+ "63": {
+  "kind": "error",
+  "text": "Not activated for this software package"
+ },
+ "64": {
+  "kind": "error",
+  "text": "No valid LEX table loaded"
+ },
+ "65": {
+  "kind": "error",
+  "text": "Window element does not exist or already exists"
+ },
+ "66": {
+  "kind": "warning",
+  "text": "Program size >64K -- may not run on all environments"
+ },
+ "67": {
+  "kind": "error",
+  "text": "VBX processor reported a failure"
+ },
+ "68": {
+  "kind": "error",
+  "text": "RPC (Remote Process Call) name not found"
+ },
+ "69": {
+  "kind": "error",
+  "text": "No Journalization file open"
+ },
+ "70": {
+  "kind": "error",
+  "text": "EDIT command syntax error"
+ },
+ "71": {
+  "kind": "error",
+  "text": "String not found"
+ },
+ "72": {
+  "kind": "error",
+  "text": "Replacement string will not fit"
+ },
+ "73": {
+  "kind": "error",
+  "text": "No current string defined"
+ },
+ "74": {
+  "kind": "error",
+  "text": "RENUMBER rejected -- Line numbers too large"
+ },
+ "75": {
+  "kind": "error",
+  "text": "Invalid Hex string"
+ },
+ "76": {
+  "kind": "error",
+  "text": "LINE_SWITCH failure - Terminal cannot be switched"
+ },
+ "77": {
+  "kind": "error",
+  "text": "Edit generates no line number"
+ },
+ "78": {
+  "kind": "error",
+  "text": "Invalid MSK specification"
+ },
+ "79": {
+  "kind": "error",
+  "text": "Invalid FORMAT specification"
+ },
+ "80": {
+  "kind": "error",
+  "text": "Invalid key definition, number or name"
+ },
+ "81": {
+  "kind": "error",
+  "text": "Invalid IOLIST specification"
+ },
+ "82": {
+  "kind": "error",
+  "text": "File must be 'LOCKED' before being 'PURGED'"
+ },
+ "83": {
+  "kind": "error",
+  "text": "Invalid statement number range"
+ },
+ "84": {
+  "kind": "error",
+  "text": "No DICTIONARY exists on OPENed file"
+ },
+ "85": {
+  "kind": "error",
+  "text": "Program does not support line numbers.."
+ },
+ "86": {
+  "kind": "error",
+  "text": "Transmission error to device"
+ },
+ "87": {
+  "kind": "error",
+  "text": "MENUBAR definition invalid"
+ },
+ "88": {
+  "kind": "error",
+  "text": "Invalid/unknown property name"
+ },
+ "89": {
+  "kind": "error",
+  "text": "File access denied -- I/O operation pending"
+ },
+ "90": {
+  "kind": "error",
+  "text": "Unable to locate Object class definition"
+ },
+ "91": {
+  "kind": "error",
+  "text": "Class/Object in use"
+ },
+ "92": {
+  "kind": "error",
+  "text": "Invalid CLASS definition"
+ },
+ "93": {
+  "kind": "error",
+  "text": "Already defined within class definition"
+ },
+ "94": {
+  "kind": "error",
+  "text": "Loop in Class inheritance found"
+ },
+ "95": {
+  "kind": "error",
+  "text": "Bad Object Identifier"
+ },
+ "96": {
+  "kind": "error",
+  "text": "Invalid RETURN value"
+ },
+ "97": {
+  "kind": "error",
+  "text": "Version conflict - function not supported"
+ },
+ "98": {
+  "kind": "error",
+  "text": "Feature not yet implemented"
+ },
+ "99": {
+  "kind": "error",
+  "text": "Feature not supported"
+ },
+ "100": {
+  "kind": "error",
+  "text": "No driver for terminal type or library missing"
+ },
+ "103": {
+  "kind": "error",
+  "text": "Control Interval (CI) error"
+ },
+ "104": {
+  "kind": "error",
+  "text": "Disk I/O error"
+ },
+ "105": {
+  "kind": "error",
+  "text": "Keyed file error (Short key block)"
+ },
+ "106": {
+  "kind": "error",
+  "text": "Keyed file error (Bad key block hdr)"
+ },
+ "107": {
+  "kind": "error",
+  "text": "Keyed file error (Wrong key block addr)"
+ },
+ "108": {
+  "kind": "error",
+  "text": "Keyed file error (Record length invalid)"
+ },
+ "109": {
+  "kind": "error",
+  "text": "Keyed file error (Deleted record chain bad)"
+ },
+ "110": {
+  "kind": "error",
+  "text": "Keyed file error (No EOF flag found)"
+ },
+ "111": {
+  "kind": "error",
+  "text": "Keyed file error (Record data unreadable)"
+ },
+ "112": {
+  "kind": "error",
+  "text": "Keyed file error (Record key size invalid)"
+ },
+ "113": {
+  "kind": "error",
+  "text": "Keyed file error (Variable record offset bad)"
+ },
+ "114": {
+  "kind": "error",
+  "text": "Keyed file error (Physical record address bad)"
+ },
+ "115": {
+  "kind": "error",
+  "text": "File I/O Verification Error"
+ },
+ "116": {
+  "kind": "error",
+  "text": "Invalid field descriptor byte"
+ },
+ "117": {
+  "kind": "error",
+  "text": "Invalid segment number"
+ },
+ "118": {
+  "kind": "error",
+  "text": "Keyed file error (Decompression failed)"
+ },
+ "120": {
+  "kind": "error",
+  "text": "Internal system logic error"
+ },
+ "121": {
+  "kind": "error",
+  "text": "Invalid program format"
+ },
+ "122": {
+  "kind": "warning",
+  "text": "Transaction Update Pending -- Use SYSTEM_JRNL SAVE or RESTORE"
+ },
+ "123": {
+  "kind": "warning",
+  "text": "The following statement labels cannot be located"
+ },
+ "124": {
+  "kind": "warning",
+  "text": "The following statement labels occur more than once"
+ },
+ "125": {
+  "kind": "warning",
+  "text": "Improper structure detected"
+ },
+ "126": {
+  "kind": "error",
+  "text": "Forced termination - No valid activation file"
+ },
+ "127": {
+  "kind": "error",
+  "text": "Break key depressed"
+ }
+}

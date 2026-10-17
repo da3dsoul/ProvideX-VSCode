@@ -1,0 +1,86 @@
+[
+ {
+  "group": "fn",
+  "key": "CVS#0",
+  "label": "extra",
+  "text": "X$=CVS(\"a\",1,1)",
+  "expect": "err",
+  "ok": true,
+  "errs": [],
+  "canon": [
+   "0117 LET X$=CVS(\"a\",1,1)"
+  ]
+ },
+ {
+  "group": "fn",
+  "key": "HSH#1",
+  "label": "fewer",
+  "text": "X$=HSH(\"a\")",
+  "expect": "err",
+  "ok": true,
+  "errs": [],
+  "canon": [
+   "0269 LET X$=HSH(\"a\")"
+  ]
+ },
+ {
+  "group": "fn",
+  "key": "STR#0",
+  "label": "extra",
+  "text": "X$=STR(1,\"a\")",
+  "expect": "err",
+  "ok": true,
+  "errs": [],
+  "canon": [
+   "0723 LET X$=STR(1,\"a\")"
+  ]
+ },
+ {
+  "group": "fn",
+  "key": "STR#1",
+  "label": "extra",
+  "text": "X$=STR(\"a\",\"a\")",
+  "expect": "err",
+  "ok": true,
+  "errs": [],
+  "canon": [
+   "0730 LET X$=STR(\"a\",\"a\")"
+  ]
+ },
+ {
+  "group": "fn",
+  "key": "TCB#0",
+  "label": "extra",
+  "text": "X=TCB(1,1)",
+  "expect": "err",
+  "ok": true,
+  "errs": [],
+  "canon": [
+   "0768 LET X=TCB(1,1)"
+  ]
+ },
+ {
+  "group": "fn",
+  "key": "TXH#0",
+  "label": "extra",
+  "text": "X=TXH(\"a\",1,1,1,1)",
+  "expect": "err",
+  "ok": true,
+  "errs": [],
+  "canon": [
+   "0798 LET X=TXH(\"a\",1,1,1,1)"
+  ]
+ },
+ {
+  "group": "fn",
+  "key": "TXW#0",
+  "label": "extra",
+  "text": "X=TXW(\"a\",1,1,1,1)",
+  "expect": "err",
+  "ok": true,
+  "errs": [],
+  "canon": [
+   "0804 LET X=TXW(\"a\",1,1,1,1)"
+  ]
+ }
+]

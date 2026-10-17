@@ -1,0 +1,16 @@
+**
+!dist/client.js
+!dist/server.js
+!bridge/**
+!data/*.json
+!data/docs/*.json
+!data/docs/VALIDATION.md
+!syntaxes/**
+!snippets/**
+!images/icon.png
+!language-configuration.json
+!language-configuration-pxts.json
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE

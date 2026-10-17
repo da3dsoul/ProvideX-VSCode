@@ -1,0 +1,8 @@
+node_modules/
+dist/
+out/
+*.vsix
+# local corpora decompiled from licensed Sage/ProvideX programs - never commit
+corpus/
+raw/
+.vscode-test/

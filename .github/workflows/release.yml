@@ -1,0 +1,37 @@
+name: Release
+
+# Push a tag like v0.1.0 (matching "version" in package.json) to publish.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      OVSX_PAT: ${{ secrets.OVSX_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Check tag matches package.json
+        run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
+      - run: npm test
+      - run: npx vsce package --no-dependencies --out providex-${GITHUB_REF_NAME#v}.vsix
+      - name: Publish to the Visual Studio Marketplace
+        run: npx vsce publish --no-dependencies --packagePath providex-${GITHUB_REF_NAME#v}.vsix
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - name: Publish to Open VSX
+        if: ${{ env.OVSX_PAT != '' }}
+        run: npx --yes ovsx publish providex-${GITHUB_REF_NAME#v}.vsix
+      - name: GitHub release
+        run: gh release create "$GITHUB_REF_NAME" providex-*.vsix --title "$GITHUB_REF_NAME" --notes "See CHANGELOG.md."
+        env:
+          GH_TOKEN: ${{ github.token }}
