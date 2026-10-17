@@ -1,3 +1,5 @@
+import { pathToFileURL } from 'url';
+const fileUri = (p: string) => pathToFileURL(p).href;
 // End-to-end tests of the bundled language server (dist/server.js) over stdio.
 // Set PVX_HOME to a ProvideX home folder to also exercise the ProvideX COM bridge.
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
@@ -29,7 +31,7 @@ const SRC = [
   'GOSUB MISSING_LABEL',
   'RETURN 1',
 ].join('\n');
-const uri = 'file:///' + path.join(tmp, 'demo.pvx').replace(/\\/g, '/');
+const uri = fileUri(path.join(tmp, 'demo.pvx'));
 
 beforeAll(async () => {
   fs.writeFileSync(path.join(tmp, 'demo.pvx'), SRC);
@@ -41,7 +43,7 @@ beforeAll(async () => {
   conn.onRequest('window/workDoneProgress/create', () => null);
   conn.listen();
   await conn.sendRequest('initialize', {
-    processId: process.pid, rootUri: 'file:///' + tmp.replace(/\\/g, '/'), workspaceFolders: [{ uri: 'file:///' + tmp.replace(/\\/g, '/'), name: 'tmp' }],
+    processId: process.pid, rootUri: fileUri(tmp), workspaceFolders: [{ uri: fileUri(tmp), name: 'tmp' }],
     capabilities: { workspace: { configuration: true }, textDocument: { semanticTokens: { requests: { full: true } } } },
     initializationOptions: { bridgeScript: path.join(root, 'bridge', 'pvxbridge.ps1'), detectedHome: pvxHome },
   });
@@ -102,7 +104,7 @@ describe('language server', () => {
   });
 
   it('serves ProvideX/TS (.pxts) documents through the ProvideX analysis', async () => {
-    const tsUri = 'file:///' + path.join(tmp, 'demo.pxts').replace(/\\/g, '/');
+    const tsUri = fileUri(path.join(tmp, 'demo.pxts'));
     const src = [
       'class Demo_Widget {',        // 0
       '  property Name$;',           // 1
@@ -193,7 +195,7 @@ describe('language server', () => {
   }, 180000);
 
   it.skipIf(!pvxHome || !fs.existsSync(path.join(pvxHome, '..', 'SY', 'SY_Maint.pvc')))('completes inherited members of compiled Sage classes', async () => {
-    const u = 'file:///' + path.join(tmp, 'inherit.pvx').replace(/\\/g, '/');
+    const u = fileUri(path.join(tmp, 'inherit.pvx'));
     const text = ['DEF CLASS "My_Maint"', 'LIKE "SY_Maint"', 'END DEF', "X=_OBJ'"].join('\n');
     conn.sendNotification('textDocument/didOpen', { textDocument: { uri: u, languageId: 'providex', version: 1, text } });
     const items = await conn.sendRequest<{ label: string; detail?: string }[]>('textDocument/completion', { textDocument: { uri: u }, position: { line: 3, character: 7 } });
@@ -203,7 +205,7 @@ describe('language server', () => {
   }, 120000);
 
   it.skipIf(!pvxHome)('validates with the real ProvideX compiler', async () => {
-    const bad = 'file:///' + path.join(tmp, 'bad.pvx').replace(/\\/g, '/');
+    const bad = fileUri(path.join(tmp, 'bad.pvx'));
     conn.sendNotification('textDocument/didOpen', { textDocument: { uri: bad, languageId: 'providex', version: 1, text: 'PRINT "ok"\nX=1+\nEND' } });
     await waitFor(() => (diagnostics.get(bad) ?? []).some((d) => d.source === 'ProvideX'), 60000);
     const d = diagnostics.get(bad)!.find((x) => x.source === 'ProvideX')!;
